@@ -120,14 +120,15 @@ body {
     background-color: #f0f0f0;
 }
 
-.btn-secondary { /* "Connect on LinkedIn" buttons - White with blue text */
-    background-color: #FFFFFF;
-    color: var(--linkedin-blue);
+/* New style for LinkedIn branded buttons */
+.btn-linkedin {
+    background-color: var(--linkedin-blue); /* Blue background */
+    color: #FFFFFF;                         /* White text */
     font-weight: bold;
 }
-.btn-secondary:hover {
+.btn-linkedin:hover {
+    background-color: #004182; /* A darker blue for the hover effect */
     transform: scale(1.05);
-    background-color: #f0f0f0;
 }
 
 .btn-project { /* "View on GitHub" buttons */
