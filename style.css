@@ -1,123 +1,286 @@
-/* Basic Styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- CSS Variables (Color Palette) --- */
+:root {
+    --bg-dark: #121212;
+    --bg-light: #F0F2F5;
+    --text-light: #EAEAEA;
+    --text-dark: #1C1E21;
+    --text-muted: #B0B3B8;
+    --accent-color: #3D5A6C;
+    --accent-color-light: #5A8299;
+    --btn-primary-bg: #000000;
+    --btn-primary-text: #FFFFFF;
+    --btn-secondary-bg: #FFFFFF;
+    --btn-secondary-text: #000000;
+}
+
+/* --- General Reset & Body Styles --- */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
 }
 
 .container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-header {
-    text-align: center;
-    border-bottom: 2px solid #f4f4f4;
-    padding-bottom: 20px;
-}
-
-header h1 {
-    margin: 0;
-    color: #0077b5; /* LinkedIn Blue */
-}
-
-header p {
-    margin: 5px 0 0;
-    color: #555;
-    font-style: italic;
-}
-
-/* Section Styles */
-section {
+/* --- Header & Navigation --- */
+.main-header {
     padding: 20px 0;
-    border-bottom: 1px solid #eee;
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #2a2a2a;
 }
 
-section h2 {
-    color: #333;
-    margin-top: 0;
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Project Styles */
-.project {
-    margin-bottom: 15px;
-}
-
-.project h3 {
-    margin: 0;
-    color: #0077b5;
-}
-
-/* Skills List */
-#skills ul {
-    list-style: none;
-    padding: 0;
-}
-
-#skills li {
-    background-color: #eef;
-    border: 1px solid #ddd;
-    display: inline-block;
-    padding: 5px 10px;
-    margin: 5px 5px 5px 0;
-    border-radius: 5px;
-}
-
-/* Links */
-a {
-    color: #0077b5;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Logo Styles */
 .logo {
-    width: 150px; /* You can change this value to make the logo bigger or smaller */
-    height: auto; /* This keeps the logo's proportions correct */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px; /* Adds a little space between the logo and your name */
+    width: 40px;
+    height: auto;
 }
 
-/* Updated to include new education/certificate statuses for consistent styling */
-.project-status,
-.education-status,
-.education-date {
-    font-size: 0.9em;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color-light);
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    border: 1px solid var(--btn-primary-bg);
+}
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+    border: 1px solid var(--btn-secondary-bg);
+}
+.btn-secondary:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.btn-project {
+    background-color: var(--accent-color);
+    color: var(--btn-primary-text);
+    padding: 8px 20px;
+    margin-top: 15px;
+}
+.btn-project:hover {
+    background-color: var(--accent-color-light);
+    transform: scale(1.03);
+}
+
+
+/* --- Hero Section --- */
+#hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Noise/Grain Texture */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiGAAAANlBMVEX29vbz8/P19fX09PTw8PDy8vLu7u7v7+/o6Ojp6enq6urr6+vt7e3s7Ozr6+vi4uLj4+Nk15gjAAAAwElEQVR42pXUyw6DMAwE0CzAeOz9L62JCVNMMbH5g5M0s8uWk5k5m5mZSWZmkpnZ+b8e7n7nLSYMWf6eGThsBde0e7ugHhqfK19FdEqiP9R57K8cb1k7MPAVQ8rGOALv9xKkcNwGsoAU4S7wAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0YgJgAfgFsoH0Yg-hEAAACHvElEQVR42uycW5LbNhCA3cI0hZSi5Yq48zgmvJssi/v/Z0dEUiIlVbJ0m+eMD0AAV7/7W28A13DMcZzjOGP7a8fx1vHy5vPHzx8/fvy/9/b1zZtP33x6+/r117ePnz9/fPz43t7ePnz8ePny+vXrm+l0OhyOFwAAAAB+F3v9+vXNm6/fuT929/b1AQAASGqHw+G790cAAAAAAAB+f3v9+gQAAPi9vX59+/pmuhIAAAAAAAB+f3v9+vXbDxEAAAAA8L/t9evX1zcPj48fP3++/Pjx4+fPDx8/evv65s2r17d7e3v7s79+fH785y8+f/74t7+/+v7t93/82//x8/evb98+3n768uXNm9f36bM/z+d7+/pmuhQAAACA2y0A35/9+ePHjx8///nz/fvX79/+t//89O0DAAAAgJ9g3759/vLl1e3rm9fP3qfP8/l8Ph8Oh4ODgwMAAADAdgtgPp/P5/O5XF69epXP5/fu3Xv36lVuV7i7unr16gAAAMC/ZgDszu5ubi6Pz8/fvn253W6323v7ejgcPnx4ODy8e/caAAD+f5gA2J3djY8/fPjwf/7+PT5/fPDwODg43N3d7e7ubm5uPj4+/fLlAwAA8H8iANb35/d/f//x8fH7t++Pj48fP757+3q32wEAAAAAAAAAAAAAAID/9wAAAABJRU5ErkJggg==');
+    z-index: -2;
+    opacity: 0.1;
+}
+
+/* Wavy Background Simulation */
+#hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 30%, rgba(53, 90, 108, 0.15), transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(90, 130, 153, 0.15), transparent 40%);
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero-content h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+.hero-content .location {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.hero-content .about-text {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+/* --- Skills Section --- */
+#skills {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    padding: 80px 0;
+    border-radius: 30px;
+    transform: translateY(-50px);
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+}
+
+#skills h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.skill-pill {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 400;
+}
+
+/* --- Projects & Education Sections --- */
+#projects, #education {
+    padding: 60px 0;
+}
+
+#projects h2, #education h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.project-card, .education-item {
+    margin-bottom: 50px;
+}
+
+.project-card h3, .education-item h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.project-card p, .education-item p {
+    color: var(--text-muted);
+    max-width: 650px;
+}
+
+.project-status {
+    font-weight: 300;
     font-style: italic;
-    font-weight: normal;
-    color: #666;
-    margin-left: 8px;
+    color: var(--accent-color-light);
 }
 
-/* Education & Certificates Section Styles */
-#education-certificates h4 {
-    margin-top: 25px;      /* Adds space above the "Certificates Currently Working On" title */
-    padding-bottom: 5px;   /* A little space below the text */
-    border-bottom: 1px solid #eee; /* A subtle dividing line */
-    color: #444;           /* Makes the sub-heading a bit darker than normal text */
+/* --- Footer --- */
+#contact {
+    background-color: #0d0d0d;
+    padding: 60px 0;
 }
 
-.education-item {
-    margin-bottom: 20px;   /* Adds space between each education/cert item */
+.footer-content {
+    text-align: center;
 }
 
-.education-item h3 {
-    margin: 0;
-    color: #0077b5;       /* Uses the same blue as project titles for consistency */
+.footer-content .btn {
+    margin-bottom: 40px;
 }
 
-.education-item p {
-    margin-top: 3px;       /* A small space between the title and the institution name */
-    margin-bottom: 0;
+.copyright {
+    color: var(--text-muted);
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .nav-links, .main-nav .btn-secondary {
+        display: none; /* Hides menu on mobile, can be replaced with a hamburger menu later */
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
 }
