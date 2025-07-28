@@ -4,103 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adrian Aguilar - Software Engineer</title>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Your Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <img src="images/logo.png" alt="Aguilar Software Engineer Logo" class="logo">
-            <h1>Adrian Aguilar</h1>
-            <p>Aspiring Software Engineer & Automation Enthusiast</p>
-        </header>
+    <header class="main-header">
+        <div class="container">
+            <nav class="main-nav">
+                <a href="#" class="logo-link">
+                    <img src="images/logo.png" alt="Adrian Aguilar Logo" class="logo">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#about">About me</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">My Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                </ul>
+                <a href="https://www.linkedin.com/in/leo-a-aguilar" target="_blank" class="btn btn-secondary">Connect on LinkedIn</a>
+            </nav>
+        </div>
+    </header>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                Hello! I'm a passionate learner dedicated to becoming a software engineer. I enjoy solving complex problems and building automated solutions that make life easier. My journey is focused on mastering Python, understanding APIs, and creating practical, real-world projects.
-            </p>
-        </section>
-
-        <section id="current-projects">
-            <h2>Currently Working On</h2>
-            <div class="project">
-                <h3>LinkedIn "Tech Term of the Day" Bot <span class="project-status">(awaiting API approval)</span></h3>
-                <p>A fully automated Python bot that posts daily tech terms to a LinkedIn Company Page. This project demonstrates skills in API integration (OAuth 2.0), debugging complex permissions, and automation with GitHub Actions. The code is complete and ready for deployment once API access is granted.</p>
-                <a href="https://github.com/AdrianAguilar2024/linkedin-automation-bot" target="_blank">View on GitHub</a>
-            </div>
-        </section>
-
-        <section id="github-repositories">
-            <h2>GitHub Repositories</h2>
-            <div class="project">
-                <h3>Personal Portfolio Website <span class="project-status">(ongoing)</span></h3>
-                <p>The source code for this very website. Built from scratch with HTML/CSS and hosted for free on GitHub Pages. This project is periodically updated to reflect my latest work and skills.</p>
-                <a href="https://github.com/AdrianAguilar2024/AdrianAguilar2024.github.io" target="_blank">View on GitHub</a>
-            </div>
-            <div class="project">
-                <h3>LinkedIn Automation Bot</h3>
-                <p>A Python script designed to post content automatically to LinkedIn. This project involved deep-diving into the OAuth 2.0 protocol and troubleshooting a variety of API permission scopes.</p>
-                <a href="https://github.com/AdrianAguilar2024/linkedin-automation-bot" target="_blank">View on GitHub</a>
-            </div>
-            <div class="project">
-                <h3>Job Search Automation Bot <span class="project-status">(completed)</span></h3>
-                <p>A Python script that automates job searches on a specific platform. It demonstrates web scraping/automation skills and runs on a weekly schedule using GitHub Actions.</p>
-                <a href="https://github.com/AdrianAguilar2024/job-search-automation" target="_blank">View on GitHub</a>
-            </div>
-        </section>
-
-        <section id="completed-projects">
-            <h2>Completed Projects</h2>
-            <div class="project">
-                <h3>Job Search Automation Bot <span class="project-status">(runs every Sunday)</span></h3>
-                <p>A Python script that automates job searches. This project is fully functional and runs on a reliable weekly schedule using GitHub Actions to deliver results.</p>
-                <a href="https://github.com/AdrianAguilar2024/job-search-automation" target="_blank">View on GitHub</a>
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Adrian Aguilar</h1>
+                <h2>Software Engineer & Automation Enthusiast</h2>
+                <p class="location">Fort Collins - Boulder</p>
+                <p class="about-text">
+                    Hello! I'm a passionate learner dedicated to becoming a software engineer. I enjoy solving complex problems and building automated solutions that make life easier. My journey is focused on mastering Python, understanding APIs, and creating practical, real-world projects.
+                </p>
+                <a href="#contact" class="btn btn-primary">Get in touch</a>
             </div>
         </section>
 
         <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>Python</li>
-                <li>APIs & REST</li>
-                <li>GitHub & Git</li>
-                <li>GitHub Actions (CI/CD)</li>
-                <li>HTML & CSS</li>
-            </ul>
-        </section>
-
-        <section id="education-certificates">
-            <h2>Education & Certificates</h2>
-
-            <div class="education-item">
-                <h3>Bachelors of Science in Computer Science</h3>
-                <p>
-                    Colorado State University Global
-                    <span class="education-date">(Expected Graduation: June 2025)</span>
-                </p>
-            </div>
-
-            <h4>Certificates Currently Working On</h4>
-
-            <div class="education-item">
-                <h3>Google AI Essentials</h3>
-                <p>
-                    Certificate through Coursera
-                    <span class="education-status">(In Progress)</span>
-                </p>
+            <div class="container">
+                <h2>Skills & Expertise</h2>
+                <div class="skills-container">
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">APIs & REST</span>
+                    <span class="skill-pill">GitHub & Git</span>
+                    <span class="skill-pill">GitHub Actions (CI/CD)</span>
+                    <span class="skill-pill">HTML5</span>
+                    <span class="skill-pill">CSS3</span>
+                    <span class="skill-pill">UI/UX Design (Basic)</span>
+                    <span class="skill-pill">Responsive Design</span>
+                </div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <p>
-                Let's connect! You can find me on:
-                <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_ID" target="_blank">LinkedIn</a> •
-                <a href="https://github.com/AdrianAguilar2024" target="_blank">GitHub</a>
-            </p>
+        <section id="projects">
+            <div class="container">
+                <h2>My Projects</h2>
+                <div class="project-card">
+                    <h3>LinkedIn "Tech Term of the Day" Bot <span class="project-status">(Awaiting API Approval)</span></h3>
+                    <p>A fully automated Python bot that posts daily tech terms to a LinkedIn Company Page. This project demonstrates skills in API integration (OAuth 2.0), automation with GitHub Actions, and secure credential management.</p>
+                    <a href="https://github.com/AdrianAguilar2024/linkedin-automation-bot" target="_blank" class="btn btn-project">View on GitHub</a>
+                </div>
+                 <div class="project-card">
+                    <h3>Job Search Automation Bot <span class="project-status">(Completed)</span></h3>
+                    <p>A Python script that automates job searches on a specific platform. This project is fully functional and runs on a reliable weekly schedule using GitHub Actions.</p>
+                    <a href="https://github.com/AdrianAguilar2024/job-search-automation" target="_blank" class="btn btn-project">View on GitHub</a>
+                </div>
+            </div>
         </section>
-    </div>
+
+        <section id="education">
+            <div class="container">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Bachelors of Science, Computer Science</h3>
+                    <p>CSU Global - 2025</p>
+                </div>
+                <div class="education-item">
+                    <h3>Google AI Essentials</h3>
+                    <p>Coursera - In Progress</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container footer-content">
+            <a href="https://www.linkedin.com/in/leo-a-aguilar" target="_blank" class="btn btn-primary">Connect on LinkedIn</a>
+            <p class="copyright">Adrian Aguilar © 2025 | Fort Collins, Colorado</p>
+        </div>
+    </footer>
 
 </body>
 </html>
