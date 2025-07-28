@@ -156,49 +156,42 @@ body {
     padding: 60px 0;
     text-align: center; /* Center all hero content */
     color: var(--text-dark); /* Ensure text is dark for readability */
-
-    /* The Lightning Bolt Effect */
-    background: 
-        linear-gradient(
-            105deg,  /* The angle of the lightning strike */
-            #ffffff 49.5%, /* White color stops just before the strike */
-            #c0c0c0 50%,   /* A thin, darker grey line for the core of the bolt */
-            #dcdcdc 50.5%, /* A slightly lighter grey for the edge of the bolt */
-            #f0f0f0 51%,   /* Fades to a very light grey just after the bolt */
-            #e9e9e9 100%  /* The bottom half of the section is a solid light grey */
-        );
+    position: relative; /* Needed for the pseudo-element overlay */
+    background-color: #e9e9e9; /* Fallback solid light grey background */
 }
 
+/* This pseudo-element creates the white top half */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    
+    /* The Jagged Lightning Bolt Effect */
+    background:
+        /* Zag 1 (bottom-most) */
+        linear-gradient(130deg, transparent 45%, #FFFFFF 45.1%),
+        
+        /* Zig 2 (middle) */
+        linear-gradient(230deg, transparent 52%, #FFFFFF 52.1%),
+
+        /* Zag 3 (top-most) */
+        linear-gradient(130deg, transparent 59%, #FFFFFF 59.1%);
+}
+
+/* This ensures the text content appears above the background effect */
 .hero-content {
+    position: relative;
+    z-index: 1;
     max-width: 700px;
-}
-
-.hero-content h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.hero-content h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--text-muted-dark);
-    margin-bottom: 5px;
-}
-
-.hero-content .location {
-    font-size: 1rem;
-    font-weight: 300;
-    color: var(--text-muted-dark);
-    margin-bottom: 30px;
-}
-
-.hero-content .about-text {
-    font-size: 1.1rem;
-    font-weight: 300;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent box for readability */
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 /* --- Skills Section --- */
