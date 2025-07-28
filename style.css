@@ -45,10 +45,17 @@ body {
 }
 
 #hero,
-#projects,
-#education {
+#projects {
     background-color: var(--bg-light);
     color: var(--text-dark);
+}
+
+.main-header,
+#skills,
+#education,
+#contact {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
 }
 
 /* --- Header & Navigation --- */
@@ -260,7 +267,7 @@ section h2 {
 }
 
 #education p {
-    color: var(--text-muted-dark);
+    color: var(--text-muted-light);
 }
 
 /* --- Footer --- */
