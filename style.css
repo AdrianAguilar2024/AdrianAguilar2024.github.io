@@ -24,9 +24,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    /* Default is a light theme */
-    background-color: var(--bg-light);
-    color: var(--text-dark);
+    background-color: var(--bg-light); /* Fallback background */
+    color: var(--text-dark); /* Fallback text color */
     line-height: 1.6;
 }
 
@@ -39,7 +38,7 @@ body {
 /* --- Section-Specific Backgrounds and Text Colors --- */
 .main-header,
 #skills,
-#contact {
+#education {
     background-color: var(--bg-dark);
     color: var(--text-light);
 }
@@ -49,13 +48,6 @@ body {
 #contact {
     background-color: var(--bg-light);
     color: var(--text-dark);
-}
-
-.main-header,
-#skills,
-#education {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
 }
 
 /* --- Header & Navigation --- */
@@ -76,7 +68,7 @@ body {
 .logo {
     width: 40px;
     height: auto;
-    border: 2px solid #555555; /* Medium grey outline */
+    border: 2px solid #555555;
     border-radius: 50%;
     padding: 2px;
 }
@@ -120,14 +112,13 @@ body {
     background-color: #f0f0f0;
 }
 
-/* New style for LinkedIn branded buttons */
 .btn-linkedin {
-    background-color: var(--linkedin-blue); /* Blue background */
-    color: #FFFFFF;                         /* White text */
+    background-color: var(--linkedin-blue);
+    color: #FFFFFF;
     font-weight: bold;
 }
 .btn-linkedin:hover {
-    background-color: #004182; /* A darker blue for the hover effect */
+    background-color: #004182;
     transform: scale(1.05);
 }
 
@@ -141,7 +132,6 @@ body {
     transform: scale(1.03);
 }
 
-/* Helper for centering buttons */
 .button-wrapper {
     text-align: center;
     margin-top: 30px;
@@ -155,64 +145,19 @@ body {
     justify-content: center;
     padding: 60px 0;
     text-align: center;
-    color: var(--text-dark); /* Dark text for the light background */
+    color: var(--text-dark);
 
-    /* The new Eggshell-to-Grey Fade */
-    /* --- Hero Section (About Me) --- */
-#hero {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 0;
-    text-align: center;
-    color: var(--text-dark); /* Dark text for the light background */
-
-    /* The new White -> Eggshell -> Grey Fade */
+    /* The White -> Eggshell -> Grey Fade */
     background: linear-gradient(
-        135deg,        /* The angle for top-left to bottom-right */
-        #FFFFFF 0%,    /* Starts with pure White */
-        #F0EAD6 50%,   /* Fades to Eggshell in the middle */
-        #e9e9e9 100%   /* Ends with light Grey */
+        135deg,
+        #FFFFFF 0%,
+        #F0EAD6 50%,
+        #e9e9e9 100%
     );
-
-.hero-content {
-    max-width: 700px;
-    /* We no longer need a separate background or blur for the content box */
-}
-
-.hero-content h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.hero-content h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: var(--text-muted-dark);
-    margin-bottom: 5px;
-}
-
-.hero-content .location {
-    font-size: 1rem;
-    font-weight: 300;
-    color: var(--text-muted-dark);
-    margin-bottom: 30px;
-}
-
-.hero-content .about-text {
-    font-size: 1.1rem;
-    font-weight: 300;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
 }
 
 .hero-content {
     max-width: 700px;
-    /* We no longer need a separate background or blur for the content box */
 }
 
 .hero-content h1 {
@@ -255,7 +200,7 @@ section h2 {
 }
 
 #skills h2 {
-    color: var(--text-light); /* Ensure title is white on dark background */
+    color: var(--text-light);
 }
 
 .skills-container {
@@ -346,8 +291,8 @@ section h2 {
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
-    .nav-links, .main-nav .btn-secondary {
-        display: none; /* Simple mobile solution: hide menu */
+    .nav-links, .main-nav .btn-linkedin {
+        display: none;
     }
 
     .hero-content h1 {
