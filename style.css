@@ -78,3 +78,13 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+/* Logo Styles */
+.logo {
+    width: 150px; /* You can change this value to make the logo bigger or smaller */
+    height: auto; /* This keeps the logo's proportions correct */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px; /* Adds a little space between the logo and your name */
+}
