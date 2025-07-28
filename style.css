@@ -45,15 +45,15 @@ body {
 }
 
 #hero,
-#projects {
+#projects,
+#contact {
     background-color: var(--bg-light);
     color: var(--text-dark);
 }
 
 .main-header,
 #skills,
-#education,
-#contact {
+#education {
     background-color: var(--bg-dark);
     color: var(--text-light);
 }
@@ -285,7 +285,7 @@ section h2 {
 }
 
 .copyright {
-    color: var(--text-muted-light);
+    color: var(--text-muted-dark);
     font-weight: 300;
     font-size: 0.9rem;
 }
