@@ -61,9 +61,9 @@ body {
     /* The new REVERSED Gradient */
     background: linear-gradient(
         135deg,
-        #bdbdbd 0%,    /* Starts with Darker Grey */
-        #F0EAD6 50%,   /* Fades to Eggshell in the middle */
-        #FFFFFF 100%   /* Ends with pure White */
+        #F5F5F5 0%,    /* Starts with Darker Grey */
+        #F5F5F5 50%,   /* Fades to Eggshell in the middle */
+        #F5F5F5 100%   /* Ends with pure White */
     );
 }
 
