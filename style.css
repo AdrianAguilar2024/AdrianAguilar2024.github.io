@@ -5,13 +5,14 @@
 :root {
     --bg-dark: #121212;
     --bg-light: #FFFFFF;
+    --bg-grey: #BABABA; /* New grey for Projects and Footer */
     --text-light: #EAEAEA;
     --text-dark: #1C1E21;
     --text-muted-dark: #65676B;
     --text-muted-light: #B0B3B8;
-    --skill-pill-bg: #3D5A6C;
-    --project-btn-bg: #584E69;
-    --project-btn-hover: #453c52;
+    --skill-pill-bg: #A8A8A8;   /* New color for skill pills */
+    --project-btn-bg: #D4C0AB;   /* New color for primary/project buttons */
+    --project-btn-hover: #bca894; /* Darker shade for hover */
     --linkedin-blue: #0A66C2;
 }
 
@@ -24,7 +25,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-dark); /* Default background for sections below the hero */
+    background-color: var(--bg-dark);
     line-height: 1.6;
 }
 
@@ -36,8 +37,8 @@ body {
 
 /* --- Header & Navigation --- */
 .main-header {
-    background-color: #D4C0AB; /* YOUR NEW SANDY BEIGE BACKGROUND */
-    color: var(--text-dark);   /* Sets default text color in header to dark */
+    background-color: #D4C0AB;
+    color: var(--text-dark);
     padding: 20px 0;
     position: sticky;
     top: 0;
@@ -64,7 +65,7 @@ body {
 }
 
 .nav-links a {
-    color: var(--text-dark); /* YOUR NEW BLACK TEXT FOR NAVIGATION */
+    color: var(--text-dark);
     text-decoration: none;
     font-weight: 300;
     transition: color 0.3s ease;
@@ -86,14 +87,14 @@ body {
     cursor: pointer;
 }
 
-.btn-primary {
-    background-color: #FFFFFF;
-    color: #1C1E21;
-    border: 1px solid #FFFFFF;
+.btn-primary { /* "Get in Touch" button */
+    background-color: var(--project-btn-bg);
+    color: var(--text-dark);
+    border: 1px solid var(--project-btn-bg);
 }
 .btn-primary:hover {
     transform: scale(1.05);
-    background-color: #f0f0f0;
+    background-color: var(--project-btn-hover);
 }
 
 .btn-linkedin {
@@ -106,9 +107,9 @@ body {
     transform: scale(1.05);
 }
 
-.btn-project {
+.btn-project { /* "View on GitHub" buttons */
     background-color: var(--project-btn-bg);
-    color: #FFFFFF !important;
+    color: var(--text-dark) !important;
     padding: 8px 20px;
 }
 .btn-project:hover {
@@ -197,7 +198,7 @@ body {
 
 #projects,
 #contact {
-    background-color: var(--bg-light);
+    background-color: var(--bg-grey); /* NEW GREY BACKGROUND */
     color: var(--text-dark);
 }
 
@@ -216,7 +217,6 @@ section h2 {
     color: var(--text-light);
 }
 
-
 /* --- Mobile Navigation Styles --- */
 .mobile-nav-toggle {
     display: none;
@@ -230,13 +230,13 @@ section h2 {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--text-dark); /* Hamburger is now dark for the beige header */
+    background-color: var(--text-dark);
     margin: 5px 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .mobile-nav-toggle.is-open .hamburger-line {
-    background-color: var(--text-light); /* Hamburger becomes light when menu is open */
+    background-color: var(--text-light);
 }
 
 .mobile-nav-toggle.is-open .hamburger-line:nth-child(1) {
@@ -283,31 +283,7 @@ section h2 {
     font-size: 2rem;
 }
 
-
-/* --- Responsive Design --- */
-@media (max-width: 768px) {
-    .nav-links, .desktop-only {
-        display: none;
-    }
-    .mobile-nav-toggle {
-        display: block;
-    }
-
-    .logo {
-        width: 60px;
-    }
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    .hero-content h2 {
-        font-size: 1.2rem;
-    }
-    section {
-        padding: 60px 20px;
-    }
-}
-
-/* (The rest of your styles for skills, projects, etc., follow) */
+/* --- Other Section Styles (Skills, Projects, etc.) --- */
 .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -316,7 +292,7 @@ section h2 {
 }
 .skill-pill {
     background-color: var(--skill-pill-bg);
-    color: var(--text-light);
+    color: var(--text-dark); /* NEW BLACK TEXT */
     padding: 12px 25px;
     border-radius: 50px;
     font-weight: 400;
@@ -326,7 +302,7 @@ section h2 {
     max-width: 650px;
     margin: 0 auto 50px auto;
     padding-bottom: 40px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid #a0a0a0; /* Darker border for grey bg */
 }
 .project-card:last-child {
     border-bottom: none;
@@ -366,4 +342,27 @@ section h2 {
     color: var(--text-muted-dark);
     font-weight: 300;
     font-size: 0.9rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .nav-links, .desktop-only {
+        display: none;
+    }
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .logo {
+        width: 60px;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
+    section {
+        padding: 60px 20px;
+    }
 }
