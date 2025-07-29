@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <!-- This is the new container for the seamless gradient -->
+    <!-- This is the container for the seamless gradient -->
     <div class="hero-wrapper">
         <header class="main-header">
             <div class="container">
@@ -21,13 +21,21 @@
                     <a href="#" class="logo-link">
                         <img src="images/logo.png" alt="Adrian Aguilar Logo" class="logo">
                     </a>
+                    <!-- Desktop Navigation Links -->
                     <ul class="nav-links">
                         <li><a href="#hero">About me</a></li>
                         <li><a href="#skills">Skills</a></li>
                         <li><a href="#projects">My Projects</a></li>
                         <li><a href="#education">Education</a></li>
                     </ul>
-                    <a href="https://www.linkedin.com/in/leo-a-aguilar" target="_blank" class="btn btn-linkedin">Connect on LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/leo-a-aguilar" target="_blank" class="btn btn-linkedin desktop-only">Connect on LinkedIn</a>
+                    
+                    <!-- Mobile Navigation "Hamburger" Button -->
+                    <button class="mobile-nav-toggle" aria-label="Open navigation menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
                 </nav>
             </div>
         </header>
@@ -46,6 +54,18 @@
             </div>
         </section>
     </div>
+
+    <!-- Mobile Navigation Menu (Hidden by default) -->
+    <div class="mobile-nav-links">
+        <ul>
+            <li><a href="#hero">About me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">My Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="https://www.linkedin.com/in/leo-a-aguilar" target="_blank" class="btn btn-linkedin">Connect on LinkedIn</a></li>
+        </ul>
+    </div>
+
 
     <!-- The rest of your content now lives inside the main tag -->
     <main>
@@ -106,6 +126,26 @@
             <p class="copyright">Adrian Aguilar © 2025 | Loveland, Colorado</p>
         </div>
     </footer>
+
+    <!-- JavaScript for the Mobile Menu -->
+    <script>
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const mobileNavLinks = document.querySelector('.mobile-nav-links');
+        const navLinksInMenu = document.querySelectorAll('.mobile-nav-links a');
+
+        mobileNavToggle.addEventListener('click', () => {
+            mobileNavLinks.classList.toggle('is-open');
+            mobileNavToggle.classList.toggle('is-open');
+        });
+
+        // Add event listener to each link to close the menu on click
+        navLinksInMenu.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNavLinks.classList.remove('is-open');
+                mobileNavToggle.classList.remove('is-open');
+            });
+        });
+    </script>
 
 </body>
 </html>
