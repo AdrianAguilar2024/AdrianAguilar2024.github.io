@@ -34,19 +34,13 @@ body {
     padding: 0 20px;
 }
 
-/* --- The Hero Wrapper (Holds the New Gradient) --- */
+/* --- The Hero Wrapper (Holds the New Solid Color) --- */
 .hero-wrapper {
-    /* Set default text color to dark for readability on the light gradient */
+    /* Set default text color to dark for readability on the light grey background */
     color: var(--text-dark);
 
-    /* YOUR NEW GRADIENT IS HERE */
-    background: #F8F8FF; /* Fallback for very old browsers */
-    background: radial-gradient(
-        circle,
-        rgba(248, 248, 255, 1) 0%,
-        rgba(220, 220, 220, 1) 38%,
-        rgba(248, 248, 255, 1) 100%
-    );
+    /* YOUR NEW SOLID GREY BACKGROUND IS HERE */
+    background-color: #DCDCDC;
 }
 
 /* --- Header & Navigation (Transparent & Sticky) --- */
