@@ -57,6 +57,14 @@ body {
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid #2a2a2a;
+
+    /* The new REVERSED Gradient */
+    background: linear-gradient(
+        135deg,
+        #bdbdbd 0%,    /* Starts with Darker Grey */
+        #F0EAD6 50%,   /* Fades to Eggshell in the middle */
+        #FFFFFF 100%   /* Ends with pure White */
+    );
 }
 
 .main-nav {
@@ -80,7 +88,7 @@ body {
 }
 
 .nav-links a {
-    color: var(--text-light);
+    color: var(--text-dark); /* Changed to dark text */
     text-decoration: none;
     font-weight: 300;
     transition: color 0.3s ease;
