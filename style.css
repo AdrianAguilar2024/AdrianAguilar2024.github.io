@@ -127,7 +127,7 @@ body {
 
 /* --- Hero Section (About Me) --- */
 #hero {
-    min-height: 90vh; /* Made slightly taller to accommodate new layout */
+    min-height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,7 +154,7 @@ body {
 }
 
 .hero-content {
-    max-width: 900px; /* Wider content area for the new layout */
+    max-width: 900px;
     position: relative;
     z-index: 2;
 }
@@ -174,70 +174,62 @@ body {
 .hero-content h2 {
     font-size: 1.5rem;
     font-weight: 400;
-    margin-bottom: 40px; /* Space between titles and the two-column layout */
+    margin-bottom: 40px;
 }
 
-/* --- NEW Two-Column About Me Layout --- */
 .about-flex-container {
     display: flex;
-    align-items: center; /* Vertically align text and image */
-    gap: 40px; /* Space between the text and image */
+    align-items: center;
+    gap: 40px;
 }
-
 .about-text-column {
-    flex: 2; /* Takes up 2/3 of the space */
-    text-align: left; /* Aligns text to the left */
+    flex: 2;
+    text-align: left;
 }
-
 .about-image-column {
-    flex: 1; /* Takes up 1/3 of the space */
+    flex: 1;
 }
-
 .profile-picture {
     max-width: 100%;
     height: auto;
-    border-radius: 50%; /* Makes the image a perfect circle */
+    border-radius: 50%;
     border: 4px solid #FFFFFF;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
-
 .about-text-column .location,
 .about-text-column .about-text {
     color: var(--text-light);
     text-shadow: 0px 1px 3px rgba(0,0,0,0.5);
 }
-
 .about-text-column .location {
     font-size: 1rem;
     font-weight: 300;
     margin-bottom: 15px;
 }
-
 .about-text-column .about-text {
     font-size: 1.1rem;
     font-weight: 300;
 }
-
 .about-text-column .button-wrapper {
-    text-align: left; /* Aligns button to the left */
+    text-align: left;
 }
-
 
 /* --- Section-Specific Backgrounds --- */
 #skills,
-#education {
+#contact { /* Footer is now dark */
     background-color: var(--bg-dark);
     color: var(--text-light);
 }
 
 #projects,
-#contact {
+#education,
+#completed-projects { /* Education is now light/grey */
     background-color: var(--bg-grey);
     color: var(--text-dark);
 }
 
 /* Other sections */
-#skills, #projects, #education, #contact {
+#skills, #projects, #education, #contact, #completed-projects {
     padding: 80px 0;
 }
 
@@ -247,26 +239,30 @@ section h2 {
     margin-bottom: 50px;
 }
 
-#skills h2, #education h2 {
+#skills h2 { /* Titles in dark sections stay light */
     color: var(--text-light);
 }
 
-/* --- Mobile Navigation Styles --- */
-.mobile-nav-toggle {
-    display: none;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 9999;
+/* --- Completed Projects Section Text Color Override --- */
+#completed-projects {
+    background-color: var(--bg-dark); /* Special dark background */
+}
+#completed-projects h2,
+#completed-projects h3,
+#completed-projects p {
+    color: var(--text-light); /* FORCES all text in this section to be white */
+}
+#completed-projects .project-card {
+    border-bottom-color: #444; /* Darker border for the dark theme */
 }
 
+
+/* --- Mobile Navigation Styles --- */
+.mobile-nav-toggle {
+    display: none; background: transparent; border: none; cursor: pointer; z-index: 9999;
+}
 .hamburger-line {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-dark);
-    margin: 5px 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: block; width: 25px; height: 3px; background-color: var(--text-dark); margin: 5px 0; transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .mobile-nav-toggle.is-open .hamburger-line {
     background-color: var(--text-light);
@@ -305,7 +301,7 @@ section h2 {
     max-width: 32%; height: auto; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* --- Other Section Styles (Skills, Projects, etc.) --- */
+/* --- Other Section Styles --- */
 .skills-container {
     display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;
 }
@@ -334,7 +330,7 @@ section h2 {
     font-size: 1.5rem; font-weight: 600;
 }
 #education p {
-    color: var(--text-muted-light);
+    color: var(--text-muted-dark); /* Education text is now dark */
 }
 .footer-content {
     text-align: center;
@@ -343,7 +339,8 @@ section h2 {
     margin-bottom: 40px;
 }
 .copyright {
-    color: var(--text-muted-dark); font-weight: 300; font-size: 0.9rem;
+    color: var(--text-muted-light); /* Footer text is now light */
+    font-weight: 300; font-size: 0.9rem;
 }
 
 /* --- Responsive Design --- */
@@ -372,18 +369,17 @@ section h2 {
     .project-images img {
         max-width: 90%;
     }
-    /* Stacks the about me section on mobile */
     .about-flex-container {
         flex-direction: column;
     }
     .about-text-column {
-        text-align: center; /* Center text on mobile */
+        text-align: center;
     }
     .about-image-column {
-        order: -1; /* Puts the image on top on mobile */
+        order: -1;
         margin-bottom: 30px;
     }
     .about-text-column .button-wrapper {
         text-align: center;
     }
-}```
+}
