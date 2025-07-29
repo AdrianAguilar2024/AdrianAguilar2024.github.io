@@ -66,7 +66,7 @@ body {
 }
 
 .logo {
-    width: 100px;
+    width: 120px;
     height: auto;
     border: 2px solid #DEDEDE;
     border-radius: 50%;
@@ -124,7 +124,7 @@ body {
 
 .btn-project { /* "View on GitHub" buttons */
     background-color: var(--project-btn-bg);
-    color: #FFFFFF;
+    color: #584E69;
     padding: 8px 20px;
 }
 .btn-project:hover {
