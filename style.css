@@ -10,9 +10,9 @@
     --text-dark: #1C1E21;
     --text-muted-dark: #65676B;
     --text-muted-light: #B0B3B8;
-    --skill-pill-bg: #c5d1e0;   /* YOUR NEW SKILL PILL COLOR */
-    --project-btn-bg: #E0D4C5;
-    --project-btn-hover: #c9bbae;
+    --skill-pill-bg: #c5d1e0;
+    --project-btn-bg: #C5AF93;   /* YOUR NEW RICHER BEIGE */
+    --project-btn-hover: #ab987e; /* NEW darker shade for hover */
     --linkedin-blue: #c5d1e0;
     --linkedin-hover: #a9b8cc;
 }
@@ -38,7 +38,7 @@ body {
 
 /* --- Header & Navigation --- */
 .main-header {
-    background-color: #E0D4C5;
+    background-color: #C5AF93; /* YOUR NEW RICHER BEIGE */
     color: var(--text-dark);
     padding: 20px 0;
     position: sticky;
@@ -295,7 +295,7 @@ section h2 {
 }
 .skill-pill {
     background-color: var(--skill-pill-bg);
-    color: var(--text-dark); /* YOUR NEW BLACK TEXT */
+    color: var(--text-dark);
     padding: 12px 25px;
     border-radius: 50px;
     font-weight: 400;
