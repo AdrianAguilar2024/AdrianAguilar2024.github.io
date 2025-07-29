@@ -160,8 +160,7 @@ body {
 }
 
 .hero-content h1,
-.hero-content h2,
-.hero-content .location {
+.hero-content h2 {
     text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
     color: var(--text-light);
 }
@@ -175,13 +174,7 @@ body {
 .hero-content h2 {
     font-size: 1.5rem;
     font-weight: 400;
-    margin-bottom: 15px; /* Adjusted margin */
-}
-
-.hero-content .location {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 40px; /* Space between location and the two-column layout */
+    margin-bottom: 40px;
 }
 
 /* --- Two-Column About Me Layout --- */
@@ -189,10 +182,10 @@ body {
     display: flex;
     align-items: center;
     gap: 40px;
-    margin-bottom: 40px; /* Space between this and the button */
 }
 .about-text-column {
     flex: 2;
+    text-align: center;
 }
 .about-image-column {
     flex: 1;
@@ -204,12 +197,23 @@ body {
     border: 4px solid #FFFFFF;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
+.about-text-column .location,
 .about-text-column .about-text {
     color: var(--text-light);
     text-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+.about-text-column .location {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.about-text-column .about-text {
     font-size: 1.1rem;
     font-weight: 300;
-    text-align: left; /* Keep the paragraph left-aligned for readability */
+    text-align: left;
+}
+.about-text-column .button-wrapper {
+    text-align: center;
 }
 
 /* --- Section-Specific Backgrounds --- */
@@ -285,6 +289,13 @@ section h2 {
 .mobile-nav-links a {
     color: var(--text-light); text-decoration: none; font-size: 2rem;
 }
+
+/* --- Mobile Nav Button Fix --- */
+.mobile-nav-links .btn-linkedin {
+    color: var(--text-dark); /* THIS IS THE FIX: Forces text to be black */
+    font-size: 1rem;         /* Overrides the large menu link font size */
+}
+
 
 /* --- Project Image Gallery Styles --- */
 .project-images {
