@@ -7,11 +7,11 @@
     --bg-light: #FFFFFF;
     --text-light: #EAEAEA;
     --text-dark: #1C1E21;
-    --text-muted-dark: #65676B;  /* Muted text for light backgrounds */
-    --text-muted-light: #B0B3B8; /* Muted text for dark backgrounds */
-    --skill-pill-bg: #3D5A6C;   /* Medium grey/blue for skill pills */
+    --text-muted-dark: #65676B;
+    --text-muted-light: #B0B3B8;
+    --skill-pill-bg: #3D5A6C;
     --project-btn-bg: #584E69;
-    --project-btn-hover: #6D8A9E;
+    --project-btn-hover: #453c52;
     --linkedin-blue: #0A66C2;
 }
 
@@ -24,8 +24,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-light); /* Fallback background */
-    color: var(--text-dark); /* Fallback text color */
+    background-color: var(--bg-dark); /* Fallback background for areas below the fold */
     line-height: 1.6;
 }
 
@@ -35,36 +34,27 @@ body {
     padding: 0 20px;
 }
 
-/* --- Section-Specific Backgrounds and Text Colors --- */
-.main-header,
-#skills,
-#education {
-    background-color: var(--bg-dark);
-    color: var(--text-light);
-}
-
-#hero,
-#projects,
-#contact {
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-}
-
-/* --- Header & Navigation --- */
-.main-header {
-    padding: 20px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #2a2a2a;
-
-    /* The new REVERSED Gradient */
+/* --- The New Hero Wrapper (Holds the Gradient) --- */
+.hero-wrapper {
+    /* The White -> Eggshell -> Darker Grey Fade */
     background: linear-gradient(
         135deg,
-        #F5F5F5 0%,    /* Starts with Darker Grey */
-        #F5F5F5 50%,   /* Fades to Eggshell in the middle */
-        #F5F5F5 100%   /* Ends with pure White */
+        #FFFFFF 0%,
+        #F0EAD6 50%,
+        #bdbdbd 100%
     );
+    color: var(--text-dark); /* Children of this will have dark text */
+}
+
+/* --- Header & Navigation (Transparent & Sticky) --- */
+.main-header {
+    padding: 20px 0;
+    position: sticky; /* THIS IS THE MAGIC! */
+    top: 0;
+    z-index: 1000;
+    background-color: transparent; /* Makes the header see-through */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle line for when it's sticky */
+    transition: background-color 0.3s ease;
 }
 
 .main-nav {
@@ -74,9 +64,9 @@ body {
 }
 
 .logo {
-    width: 140px;
+    width: 80px;
     height: auto;
-    border: 2px solid #DEDEDE;
+    border: 2px solid #888; /* Slightly lighter border */
     border-radius: 50%;
     padding: 2px;
 }
@@ -88,14 +78,14 @@ body {
 }
 
 .nav-links a {
-    color: var(--text-dark); /* Changed to dark text */
+    color: var(--text-dark); /* Dark text for the light gradient background */
     text-decoration: none;
     font-weight: 300;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--project-btn-hover);
+    color: #000;
 }
 
 /* --- Buttons --- */
@@ -110,7 +100,7 @@ body {
     cursor: pointer;
 }
 
-.btn-primary { /* "Get in Touch" button - White */
+.btn-primary {
     background-color: #FFFFFF;
     color: #1C1E21;
     border: 1px solid #1C1E21;
@@ -130,9 +120,9 @@ body {
     transform: scale(1.05);
 }
 
-.btn-project { /* "View on GitHub" buttons */
+.btn-project {
     background-color: var(--project-btn-bg);
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     padding: 8px 20px;
 }
 .btn-project:hover {
@@ -145,7 +135,7 @@ body {
     margin-top: 30px;
 }
 
-/* --- Hero Section (About Me) --- */
+/* --- Hero Section (Content Only) --- */
 #hero {
     min-height: 80vh;
     display: flex;
@@ -153,15 +143,7 @@ body {
     justify-content: center;
     padding: 60px 0;
     text-align: center;
-    color: var(--text-dark);
-
-    /* The White -> Eggshell -> Grey Fade */
-    background-image: linear-gradient(
-        to bottom right,
-        #FFFFFF 0%,
-        #F0EAD6 50%,
-        #676785 100%
-    );
+    /* BACKGROUND IS NOW ON THE WRAPPER */
 }
 
 .hero-content {
@@ -178,7 +160,6 @@ body {
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--text-muted-dark);
-    margin-bottom: 5px;
 }
 
 .hero-content .location {
@@ -196,8 +177,21 @@ body {
     margin-right: auto;
 }
 
-/* --- Skills Section --- */
-#skills {
+/* --- Section-Specific Backgrounds and Text Colors --- */
+#skills,
+#education {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+#projects,
+#contact {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* Other sections */
+#skills, #projects, #education, #contact {
     padding: 80px 0;
 }
 
@@ -207,9 +201,11 @@ section h2 {
     margin-bottom: 50px;
 }
 
-#skills h2 {
+#skills h2, #education h2 {
     color: var(--text-light);
 }
+
+/* (The rest of your styles for skills, projects, education, footer, etc., remain largely the same) */
 
 .skills-container {
     display: flex;
@@ -217,7 +213,6 @@ section h2 {
     justify-content: center;
     gap: 15px;
 }
-
 .skill-pill {
     background-color: var(--skill-pill-bg);
     color: var(--text-light);
@@ -225,12 +220,6 @@ section h2 {
     border-radius: 50px;
     font-weight: 400;
 }
-
-/* --- Projects Section --- */
-#projects {
-    padding: 80px 0;
-}
-
 .project-card {
     text-align: center;
     max-width: 650px;
@@ -242,55 +231,36 @@ section h2 {
     border-bottom: none;
     padding-bottom: 0;
 }
-
 #projects h3 {
     font-size: 1.5rem;
     font-weight: 600;
 }
-
 #projects p {
     color: var(--text-muted-dark);
     margin: 10px 0;
 }
-
 .project-status {
     font-weight: 300;
     font-style: italic;
     color: var(--linkedin-blue);
 }
-
-/* --- Education Section --- */
-#education {
-    padding: 80px 0;
-}
-
 .education-item {
     margin-bottom: 30px;
     text-align: center;
 }
-
 #education h3 {
     font-size: 1.5rem;
     font-weight: 600;
 }
-
 #education p {
     color: var(--text-muted-light);
 }
-
-/* --- Footer --- */
-#contact {
-    padding: 60px 0;
-}
-
 .footer-content {
     text-align: center;
 }
-
 .footer-content .btn {
     margin-bottom: 40px;
 }
-
 .copyright {
     color: var(--text-muted-dark);
     font-weight: 300;
@@ -302,15 +272,12 @@ section h2 {
     .nav-links, .main-nav .btn-linkedin {
         display: none;
     }
-
     .hero-content h1 {
         font-size: 2.5rem;
     }
-
     .hero-content h2 {
         font-size: 1.2rem;
     }
-
     section {
         padding: 60px 0;
     }
