@@ -24,7 +24,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-dark); /* Fallback for below-the-fold content */
+    background-color: var(--bg-dark);
     line-height: 1.6;
 }
 
@@ -34,16 +34,13 @@ body {
     padding: 0 20px;
 }
 
-/* --- The Hero Wrapper (Holds the New Solid Color) --- */
+/* --- The Hero Wrapper (Holds the Gradient) --- */
 .hero-wrapper {
-    /* Set default text color to dark for readability on the light grey background */
     color: var(--text-dark);
-
-    /* YOUR NEW SOLID GREY BACKGROUND IS HERE */
-    background-color: #DCDCDC;
+    background-color: #DCDCDC; /* Solid grey background */
 }
 
-/* --- Header & Navigation (Transparent & Sticky) --- */
+/* --- Header & Navigation --- */
 .main-header {
     padding: 20px 0;
     position: sticky;
@@ -51,7 +48,6 @@ body {
     z-index: 1000;
     background-color: transparent;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
 }
 
 .main-nav {
@@ -69,7 +65,7 @@ body {
 
 .nav-links {
     list-style: none;
-    display: flex;
+    display: flex; /* Will be hidden on mobile */
     gap: 30px;
 }
 
@@ -149,7 +145,6 @@ body {
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 10px;
-    color: var(--text-dark);
 }
 
 .hero-content h2,
@@ -174,10 +169,9 @@ body {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    color: var(--text-dark);
 }
 
-/* --- Section-Specific Backgrounds and Text Colors --- */
+/* --- Section-Specific Backgrounds --- */
 #skills,
 #education {
     background-color: var(--bg-dark);
@@ -205,72 +199,82 @@ section h2 {
     color: var(--text-light);
 }
 
-/* (The rest of your styles for skills, projects, education, footer, etc., remain the same) */
+/* --- Mobile Navigation Styles --- */
+.mobile-nav-toggle {
+    display: none; /* Hidden by default, shown on mobile */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 9999;
+}
 
-.skills-container {
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark);
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hamburger animation to 'X' */
+.mobile-nav-toggle.is-open .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.mobile-nav-toggle.is-open .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+.mobile-nav-toggle.is-open .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobile-nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    align-items: center;
+    transform: translateX(100%); /* Hidden off-screen to the right */
+    transition: transform 0.4s ease-in-out;
+    z-index: 9998;
 }
-.skill-pill {
-    background-color: var(--skill-pill-bg);
+
+.mobile-nav-links.is-open {
+    transform: translateX(0); /* Slides into view */
+}
+
+.mobile-nav-links ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-nav-links li {
+    margin: 30px 0;
+}
+
+.mobile-nav-links a {
     color: var(--text-light);
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-weight: 400;
-}
-.project-card {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto 50px auto;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #e0e0e0;
-}
-.project-card:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-#projects h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-#projects p {
-    color: var(--text-muted-dark);
-    margin: 10px 0;
-}
-.project-status {
-    font-weight: 300;
-    font-style: italic;
-    color: var(--linkedin-blue);
-}
-.education-item {
-    margin-bottom: 30px;
-    text-align: center;
-}
-#education h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-#education p {
-    color: var(--text-muted-light);
-}
-.footer-content {
-    text-align: center;
-}
-.footer-content .btn {
-    margin-bottom: 40px;
-}
-.copyright {
-    color: var(--text-muted-dark);
-    font-weight: 300;
-    font-size: 0.9rem;
+    text-decoration: none;
+    font-size: 2rem;
 }
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
-    .nav-links, .main-nav .btn-linkedin {
+    /* Hide desktop nav and show mobile hamburger */
+    .nav-links, .desktop-only {
         display: none;
+    }
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    /* Adjust sizing for smaller screens */
+    .logo {
+        width: 60px; /* Make logo smaller on mobile */
     }
     .hero-content h1 {
         font-size: 2.5rem;
@@ -279,6 +283,6 @@ section h2 {
         font-size: 1.2rem;
     }
     section {
-        padding: 60px 0;
+        padding: 60px 20px; /* Add more horizontal padding */
     }
 }
