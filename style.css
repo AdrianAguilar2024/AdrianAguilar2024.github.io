@@ -36,16 +36,16 @@ body {
 
 /* --- The Hero Wrapper (Holds the New Gradient) --- */
 .hero-wrapper {
-    /* Set default text color to dark for readability on the new light gradient */
+    /* Set default text color to dark for readability on the light gradient */
     color: var(--text-dark);
 
-    /* Your new gradient with a fallback color */
+    /* YOUR NEW GRADIENT IS HERE */
     background: #F8F8FF; /* Fallback for very old browsers */
     background: radial-gradient(
         circle,
         rgba(248, 248, 255, 1) 0%,
-        rgba(245, 245, 245, 1) 38%,
-        rgba(220, 220, 220, 1) 100%
+        rgba(220, 220, 220, 1) 38%,
+        rgba(248, 248, 255, 1) 100%
     );
 }
 
@@ -56,7 +56,7 @@ body {
     top: 0;
     z-index: 1000;
     background-color: transparent;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Dark, subtle border */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
 }
 
@@ -67,11 +67,10 @@ body {
 }
 
 .logo {
-    width: 120px;
+    width: 80px;
     height: auto;
     border-radius: 50%;
     padding: 2px;
-}
 }
 
 .nav-links {
@@ -81,7 +80,7 @@ body {
 }
 
 .nav-links a {
-    color: var(--text-dark); /* Dark text for light background */
+    color: var(--text-dark);
     text-decoration: none;
     font-weight: 300;
     transition: color 0.3s ease;
