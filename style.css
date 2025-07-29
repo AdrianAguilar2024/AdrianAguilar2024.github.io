@@ -11,9 +11,10 @@
     --text-muted-dark: #65676B;
     --text-muted-light: #B0B3B8;
     --skill-pill-bg: #858585;
-    --project-btn-bg: #E0D4C5;   /* YOUR NEW BEIGE COLOR */
-    --project-btn-hover: #c9bbae; /* NEW darker shade for hover */
-    --linkedin-blue: #0A66C2;
+    --project-btn-bg: #E0D4C5;
+    --project-btn-hover: #c9bbae;
+    --linkedin-blue: #c5d1e0; /* YOUR NEW LINKEDIN BUTTON COLOR */
+    --linkedin-hover: #a9b8cc; /* NEW darker shade for hover */
 }
 
 /* --- General Reset & Body Styles --- */
@@ -37,7 +38,7 @@ body {
 
 /* --- Header & Navigation --- */
 .main-header {
-    background-color: #E0D4C5; /* YOUR NEW BEIGE COLOR */
+    background-color: #E0D4C5;
     color: var(--text-dark);
     padding: 20px 0;
     position: sticky;
@@ -103,7 +104,7 @@ body {
     font-weight: bold;
 }
 .btn-linkedin:hover {
-    background-color: #004182;
+    background-color: var(--linkedin-hover);
     transform: scale(1.05);
 }
 
