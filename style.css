@@ -7,9 +7,9 @@
     --bg-light: #FFFFFF;
     --text-light: #EAEAEA;
     --text-dark: #1C1E21;
-    --text-muted-dark: #65676B;  /* Muted text for light backgrounds */
-    --text-muted-light: #B0B3B8; /* Muted text for dark backgrounds */
-    --skill-pill-bg: #3D5A6C;   /* Medium grey/blue for skill pills */
+    --text-muted-dark: #65676B;
+    --text-muted-light: #B0B3B8;
+    --skill-pill-bg: #3D5A6C;
     --project-btn-bg: #584E69;
     --project-btn-hover: #453c52;
     --linkedin-blue: #0A66C2;
@@ -24,7 +24,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-dark); /* Fallback background for areas below the fold */
+    background-color: var(--bg-dark);
     line-height: 1.6;
 }
 
@@ -36,9 +36,6 @@ body {
 
 /* --- The Hero Wrapper (Holds the New Gradient) --- */
 .hero-wrapper {
-    /* Set text to light for readability on the dark gradient */
-    color: var(--text-light);
-
     /* Your new gradient */
     background: #FDF5E6; /* Fallback color */
     background: linear-gradient(
@@ -56,7 +53,7 @@ body {
     top: 0;
     z-index: 1000;
     background-color: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Lighter border for dark bg */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Darker border for light bg */
     transition: background-color 0.3s ease;
 }
 
@@ -69,7 +66,7 @@ body {
 .logo {
     width: 80px;
     height: auto;
-    border: 2px solid var(--text-muted-light); /* Light border for dark bg */
+    border: 2px solid #555; /* Dark border for light bg */
     border-radius: 50%;
     padding: 2px;
 }
@@ -80,15 +77,16 @@ body {
     gap: 30px;
 }
 
+/* THIS IS THE FIX: Navigation links are now dark */
 .nav-links a {
-    color: var(--text-light); /* Light text for dark bg */
+    color: var(--text-dark);
     text-decoration: none;
     font-weight: 300;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #FFFFFF;
+    color: #000000;
 }
 
 /* --- Buttons --- */
@@ -104,13 +102,13 @@ body {
 }
 
 .btn-primary {
-    background-color: #FFFFFF;
-    color: #1C1E21;
-    border: 1px solid #1C1E21;
+    background-color: #000000; /* Made button black for contrast */
+    color: #FFFFFF;
+    border: 1px solid #000000;
 }
 .btn-primary:hover {
     transform: scale(1.05);
-    background-color: #f0f0f0;
+    background-color: #333333;
 }
 
 .btn-linkedin {
@@ -146,7 +144,7 @@ body {
     justify-content: center;
     padding: 60px 0;
     text-align: center;
-    /* BACKGROUND IS NOW ON THE WRAPPER */
+    color: var(--text-dark); /* THIS IS THE FIX: Default text color for this section is now dark */
 }
 
 .hero-content {
@@ -157,20 +155,22 @@ body {
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 10px;
-    /* Adding a subtle shadow to pop against the light part of the gradient */
-    text-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* THIS IS THE FIX: Subheadings are now dark muted */
+.hero-content h2,
+.hero-content .location {
+    color: var(--text-muted-dark);
 }
 
 .hero-content h2 {
     font-size: 1.5rem;
     font-weight: 400;
-    color: var(--text-light); /* Changed to light text */
 }
 
 .hero-content .location {
     font-size: 1rem;
     font-weight: 300;
-    color: var(--text-muted-light); /* Changed to light muted text */
     margin-bottom: 30px;
 }
 
@@ -210,7 +210,8 @@ section h2 {
     color: var(--text-light);
 }
 
-/* --- Skills Section --- */
+/* (The rest of your styles for skills, projects, education, footer, etc., remain the same) */
+
 .skills-container {
     display: flex;
     flex-wrap: wrap;
@@ -224,8 +225,6 @@ section h2 {
     border-radius: 50px;
     font-weight: 400;
 }
-
-/* --- Projects Section --- */
 .project-card {
     text-align: center;
     max-width: 650px;
@@ -250,8 +249,6 @@ section h2 {
     font-style: italic;
     color: var(--linkedin-blue);
 }
-
-/* --- Education Section --- */
 .education-item {
     margin-bottom: 30px;
     text-align: center;
@@ -263,8 +260,6 @@ section h2 {
 #education p {
     color: var(--text-muted-light);
 }
-
-/* --- Footer --- */
 .footer-content {
     text-align: center;
 }
