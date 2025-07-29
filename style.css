@@ -124,7 +124,7 @@ body {
 
 .btn-project { /* "View on GitHub" buttons */
     background-color: var(--project-btn-bg);
-    color: #584E69;
+    color: #E6E6FA;
     padding: 8px 20px;
 }
 .btn-project:hover {
