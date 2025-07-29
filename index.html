@@ -52,11 +52,9 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <!-- These titles remain centered -->
                 <h1>Adrian Aguilar</h1>
                 <h2>Software Engineer & Automation Enthusiast</h2>
                 
-                <!-- NEW Two-Column Layout for Text and Picture -->
                 <div class="about-flex-container">
                     <div class="about-text-column">
                         <p class="location">Fort Collins - Boulder</p>
@@ -70,7 +68,8 @@
                         </div>
                     </div>
                     <div class="about-image-column">
-                        <img src="images/ProfilePic.jpeg" alt="A profile picture of Adrian Aguilar" class="profile-picture">
+                        <!-- THE FIX: Changed ProfilePic.jpeg to profilepic.jpeg -->
+                        <img src="images/profilepic.jpeg" alt="A profile picture of Adrian Aguilar" class="profile-picture">
                     </div>
                 </div>
             </div>
@@ -121,6 +120,7 @@
             </div>
         </section>
 
+        <!-- NOTE: This section ID is still 'completed-projects' but we will style its text to be white -->
         <section id="completed-projects">
             <div class="container">
                 <h2>Completed Projects</h2>
@@ -128,7 +128,6 @@
                     <h3>JS Lawncare - Live Client Website</h3>
                     <p>Designed and developed a responsive, professional website for a local lawn care business. This project involved direct client communication to meet their business needs. Technologies used include HTML, CSS, and JavaScript for a clean, user-friendly interface. Handled the entire process from development to deployment.</p>
                     <div class="project-images">
-                        <!-- CORRECTED IMAGE PATHS (all lowercase) -->
                         <img src="images/js-lawn1.png" alt="JS Lawncare homepage screenshot">
                         <img src="images/js-lawn2.png" alt="JS Lawncare services section screenshot">
                         <img src="images/js-lawn3.png" alt="JS Lawncare contact form screenshot">
