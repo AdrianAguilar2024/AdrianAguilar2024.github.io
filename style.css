@@ -202,18 +202,23 @@ body {
     color: var(--text-light);
     text-shadow: 0px 1px 3px rgba(0,0,0,0.5);
 }
+
+/* THIS IS THE FIX: Styling the location to match the h2 */
 .about-text-column .location {
-    font-size: 1rem;
-    font-weight: 300;
-    margin-bottom: 15px;
-    text-align: center; /* THIS IS THE FIX */
+    font-size: 1.5rem;   /* Match h2 size */
+    font-weight: 400;    /* Match h2 weight */
+    margin-bottom: 20px; /* Adjusted margin */
+    text-align: center;  /* Ensure it's centered */
 }
+
 .about-text-column .about-text {
     font-size: 1.1rem;
     font-weight: 300;
 }
+
+/* THIS IS THE FIX: Confirming the button wrapper is centered */
 .about-text-column .button-wrapper {
-    text-align: center; /* THIS IS THE FIX */
+    text-align: center;
 }
 
 /* --- Section-Specific Backgrounds --- */
@@ -241,7 +246,7 @@ section h2 {
     margin-bottom: 50px;
 }
 
-#skills h2, #completed-projects h2, #contact h2 {
+#skills h2, #completed-projects h2, #education h2 {
     color: var(--text-light);
 }
 
@@ -336,8 +341,7 @@ section h2 {
     margin-bottom: 40px;
 }
 .copyright {
-    color: var(--text-muted-light);
-    font-weight: 300; font-size: 0.9rem;
+    color: var(--text-light);
 }
 
 /* --- Responsive Design --- */
@@ -379,4 +383,4 @@ section h2 {
     .about-text-column .button-wrapper {
         text-align: center;
     }
-}
+}```
