@@ -177,7 +177,7 @@ body {
     margin-bottom: 40px;
 }
 
-/* --- NEW Two-Column About Me Layout --- */
+/* --- Two-Column About Me Layout --- */
 .about-flex-container {
     display: flex;
     align-items: center;
@@ -185,7 +185,7 @@ body {
 }
 .about-text-column {
     flex: 2;
-    text-align: left;
+    text-align: center; /* THIS IS THE FIX: Center align the column content */
 }
 .about-image-column {
     flex: 1;
@@ -202,21 +202,16 @@ body {
     color: var(--text-light);
     text-shadow: 0px 1px 3px rgba(0,0,0,0.5);
 }
-
-/* THIS IS THE FIX: Styling the location to match the h2 */
 .about-text-column .location {
-    font-size: 1.5rem;   /* Match h2 size */
-    font-weight: 400;    /* Match h2 weight */
-    margin-bottom: 20px; /* Adjusted margin */
-    text-align: center;  /* Ensure it's centered */
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
 }
-
 .about-text-column .about-text {
     font-size: 1.1rem;
     font-weight: 300;
+    text-align: left; /* THIS IS THE FIX: Keep the paragraph left-aligned for readability */
 }
-
-/* THIS IS THE FIX: Confirming the button wrapper is centered */
 .about-text-column .button-wrapper {
     text-align: center;
 }
@@ -246,7 +241,8 @@ section h2 {
     margin-bottom: 50px;
 }
 
-#skills h2, #completed-projects h2, #education h2 {
+/* THIS IS THE FIX: Only dark-background sections get light titles */
+#skills h2, #completed-projects h2 {
     color: var(--text-light);
 }
 
@@ -332,7 +328,7 @@ section h2 {
     font-size: 1.5rem; font-weight: 600;
 }
 #education p {
-    color: var(--text-muted-dark);
+    color: var(--text-muted-dark); /* THIS IS THE FIX: Education text is now dark */
 }
 .footer-content {
     text-align: center;
@@ -383,4 +379,4 @@ section h2 {
     .about-text-column .button-wrapper {
         text-align: center;
     }
-}```
+}
