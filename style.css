@@ -11,8 +11,8 @@
     --text-muted-dark: #65676B;
     --text-muted-light: #B0B3B8;
     --skill-pill-bg: #c5d1e0;
-    --project-btn-bg: #C5AF93;   /* YOUR NEW RICHER BEIGE */
-    --project-btn-hover: #ab987e; /* NEW darker shade for hover */
+    --project-btn-bg: #C5AF93;
+    --project-btn-hover: #ab987e;
     --linkedin-blue: #c5d1e0;
     --linkedin-hover: #a9b8cc;
 }
@@ -38,7 +38,7 @@ body {
 
 /* --- Header & Navigation --- */
 .main-header {
-    background-color: #C5AF93; /* YOUR NEW RICHER BEIGE */
+    background-color: #C5AF93;
     color: var(--text-dark);
     padding: 20px 0;
     position: sticky;
@@ -88,7 +88,7 @@ body {
     cursor: pointer;
 }
 
-.btn-primary { /* "Get in Touch" button */
+.btn-primary {
     background-color: var(--project-btn-bg);
     color: var(--text-dark);
     border: 1px solid var(--text-dark);
@@ -109,7 +109,7 @@ body {
     transform: scale(1.05);
 }
 
-.btn-project { /* "View on GitHub" buttons */
+.btn-project {
     background-color: var(--project-btn-bg);
     color: var(--text-dark) !important;
     padding: 8px 20px;
@@ -127,7 +127,7 @@ body {
 
 /* --- Hero Section (About Me) --- */
 #hero {
-    min-height: 80vh;
+    min-height: 90vh; /* Made slightly taller to accommodate new layout */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,43 +154,74 @@ body {
 }
 
 .hero-content {
-    max-width: 700px;
+    max-width: 900px; /* Wider content area for the new layout */
     position: relative;
     z-index: 2;
+}
+
+.hero-content h1,
+.hero-content h2 {
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+    color: var(--text-light);
 }
 
 .hero-content h1 {
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 10px;
-    text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
-}
-
-.hero-content h2,
-.hero-content .location,
-.hero-content .about-text {
-    color: var(--text-light);
-    text-shadow: 0px 1px 3px rgba(0,0,0,0.5);
 }
 
 .hero-content h2 {
     font-size: 1.5rem;
     font-weight: 400;
+    margin-bottom: 40px; /* Space between titles and the two-column layout */
 }
 
-.hero-content .location {
+/* --- NEW Two-Column About Me Layout --- */
+.about-flex-container {
+    display: flex;
+    align-items: center; /* Vertically align text and image */
+    gap: 40px; /* Space between the text and image */
+}
+
+.about-text-column {
+    flex: 2; /* Takes up 2/3 of the space */
+    text-align: left; /* Aligns text to the left */
+}
+
+.about-image-column {
+    flex: 1; /* Takes up 1/3 of the space */
+}
+
+.profile-picture {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Makes the image a perfect circle */
+    border: 4px solid #FFFFFF;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.about-text-column .location,
+.about-text-column .about-text {
+    color: var(--text-light);
+    text-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+.about-text-column .location {
     font-size: 1rem;
     font-weight: 300;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
-.hero-content .about-text {
+.about-text-column .about-text {
     font-size: 1.1rem;
     font-weight: 300;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
+
+.about-text-column .button-wrapper {
+    text-align: left; /* Aligns button to the left */
+}
+
 
 /* --- Section-Specific Backgrounds --- */
 #skills,
@@ -237,11 +268,9 @@ section h2 {
     margin: 5px 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
 .mobile-nav-toggle.is-open .hamburger-line {
     background-color: var(--text-light);
 }
-
 .mobile-nav-toggle.is-open .hamburger-line:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -253,84 +282,56 @@ section h2 {
 }
 
 .mobile-nav-links {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(100%);
-    transition: transform 0.4s ease-in-out;
-    z-index: 9998;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); display: flex; justify-content: center; align-items: center; transform: translateX(100%); transition: transform 0.4s ease-in-out; z-index: 9998;
 }
-
 .mobile-nav-links.is-open {
     transform: translateX(0);
 }
-
 .mobile-nav-links ul {
-    list-style: none;
-    text-align: center;
+    list-style: none; text-align: center;
 }
-
 .mobile-nav-links li {
     margin: 30px 0;
 }
-
 .mobile-nav-links a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-size: 2rem;
+    color: var(--text-light); text-decoration: none; font-size: 2rem;
+}
+
+/* --- Project Image Gallery Styles --- */
+.project-images {
+    display: flex; justify-content: center; gap: 15px; margin-top: 25px; margin-bottom: 10px;
+}
+.project-images img {
+    max-width: 32%; height: auto; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 /* --- Other Section Styles (Skills, Projects, etc.) --- */
 .skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;
 }
 .skill-pill {
-    background-color: var(--skill-pill-bg);
-    color: var(--text-dark);
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-weight: 400;
+    background-color: var(--skill-pill-bg); color: var(--text-dark); padding: 12px 25px; border-radius: 50px; font-weight: 400;
 }
 .project-card {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto 50px auto;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #c7c1b9;
+    text-align: center; max-width: 650px; margin: 0 auto 50px auto; padding-bottom: 40px; border-bottom: 1px solid #c7c1b9;
 }
 .project-card:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+    border-bottom: none; padding-bottom: 0;
 }
 #projects h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.5rem; font-weight: 600;
 }
 #projects p {
-    color: var(--text-muted-dark);
-    margin: 10px 0;
+    color: var(--text-muted-dark); margin: 10px 0;
 }
 .project-status {
-    font-weight: 300;
-    font-style: italic;
-    color: #0A66C2;
+    font-weight: 300; font-style: italic; color: #0A66C2;
 }
 .education-item {
-    margin-bottom: 30px;
-    text-align: center;
+    margin-bottom: 30px; text-align: center;
 }
 #education h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.5rem; font-weight: 600;
 }
 #education p {
     color: var(--text-muted-light);
@@ -342,9 +343,7 @@ section h2 {
     margin-bottom: 40px;
 }
 .copyright {
-    color: var(--text-muted-dark);
-    font-weight: 300;
-    font-size: 0.9rem;
+    color: var(--text-muted-dark); font-weight: 300; font-size: 0.9rem;
 }
 
 /* --- Responsive Design --- */
@@ -355,7 +354,6 @@ section h2 {
     .mobile-nav-toggle {
         display: block;
     }
-
     .logo {
         width: 60px;
     }
@@ -368,4 +366,24 @@ section h2 {
     section {
         padding: 60px 20px;
     }
-}
+    .project-images {
+        flex-direction: column; align-items: center;
+    }
+    .project-images img {
+        max-width: 90%;
+    }
+    /* Stacks the about me section on mobile */
+    .about-flex-container {
+        flex-direction: column;
+    }
+    .about-text-column {
+        text-align: center; /* Center text on mobile */
+    }
+    .about-image-column {
+        order: -1; /* Puts the image on top on mobile */
+        margin-bottom: 30px;
+    }
+    .about-text-column .button-wrapper {
+        text-align: center;
+    }
+}```
