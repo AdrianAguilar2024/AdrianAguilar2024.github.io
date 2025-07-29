@@ -24,7 +24,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-dark);
+    background-color: var(--bg-dark); /* Fallback for below-the-fold content */
     line-height: 1.6;
 }
 
@@ -36,13 +36,16 @@ body {
 
 /* --- The Hero Wrapper (Holds the New Gradient) --- */
 .hero-wrapper {
-    /* Your new gradient */
-    background: #FDF5E6; /* Fallback color */
-    background: linear-gradient(
-        354deg,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(232, 233, 233, 1) 38%,
-        rgba(232, 233, 233, 1) 100%
+    /* Set default text color to dark for readability on the new light gradient */
+    color: var(--text-dark);
+
+    /* Your new gradient with a fallback color */
+    background: #F8F8FF; /* Fallback for very old browsers */
+    background: radial-gradient(
+        circle,
+        rgba(248, 248, 255, 1) 0%,
+        rgba(245, 245, 245, 1) 38%,
+        rgba(220, 220, 220, 1) 100%
     );
 }
 
@@ -53,7 +56,7 @@ body {
     top: 0;
     z-index: 1000;
     background-color: transparent;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Darker border for light bg */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Dark, subtle border */
     transition: background-color 0.3s ease;
 }
 
@@ -66,7 +69,7 @@ body {
 .logo {
     width: 80px;
     height: auto;
-    border: 2px solid #555; /* Dark border for light bg */
+    border: 2px solid #555; /* Dark border */
     border-radius: 50%;
     padding: 2px;
 }
@@ -77,9 +80,8 @@ body {
     gap: 30px;
 }
 
-/* THIS IS THE FIX: Navigation links are now dark */
 .nav-links a {
-    color: var(--text-dark);
+    color: var(--text-dark); /* Dark text for light background */
     text-decoration: none;
     font-weight: 300;
     transition: color 0.3s ease;
@@ -102,7 +104,7 @@ body {
 }
 
 .btn-primary {
-    background-color: #000000; /* Made button black for contrast */
+    background-color: #000000;
     color: #FFFFFF;
     border: 1px solid #000000;
 }
@@ -144,7 +146,6 @@ body {
     justify-content: center;
     padding: 60px 0;
     text-align: center;
-    color: var(--text-dark); /* THIS IS THE FIX: Default text color for this section is now dark */
 }
 
 .hero-content {
@@ -155,9 +156,9 @@ body {
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 10px;
+    color: var(--text-dark);
 }
 
-/* THIS IS THE FIX: Subheadings are now dark muted */
 .hero-content h2,
 .hero-content .location {
     color: var(--text-muted-dark);
@@ -180,6 +181,7 @@ body {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+    color: var(--text-dark);
 }
 
 /* --- Section-Specific Backgrounds and Text Colors --- */
