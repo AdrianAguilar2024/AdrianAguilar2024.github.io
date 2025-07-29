@@ -5,12 +5,12 @@
 :root {
     --bg-dark: #121212;
     --bg-light: #FFFFFF;
-    --bg-grey: #f2ede6; /* YOUR NEW BEIGE BACKGROUND */
+    --bg-grey: #f2ede6;
     --text-light: #FFFFFF;
     --text-dark: #1C1E21;
     --text-muted-dark: #65676B;
     --text-muted-light: #B0B3B8;
-    --skill-pill-bg: #858585;
+    --skill-pill-bg: #c5d1e0;   /* YOUR NEW SKILL PILL COLOR */
     --project-btn-bg: #E0D4C5;
     --project-btn-hover: #c9bbae;
     --linkedin-blue: #c5d1e0;
@@ -100,9 +100,9 @@ body {
 
 .btn-linkedin {
     background-color: var(--linkedin-blue);
-    color: var(--text-dark); /* NEW black text */
+    color: var(--text-dark);
     font-weight: bold;
-    border: 1px solid var(--text-dark); /* NEW black outline */
+    border: 1px solid var(--text-dark);
 }
 .btn-linkedin:hover {
     background-color: var(--linkedin-hover);
@@ -201,7 +201,7 @@ body {
 
 #projects,
 #contact {
-    background-color: var(--bg-grey); /* USING YOUR NEW BEIGE BACKGROUND */
+    background-color: var(--bg-grey);
     color: var(--text-dark);
 }
 
@@ -295,7 +295,7 @@ section h2 {
 }
 .skill-pill {
     background-color: var(--skill-pill-bg);
-    color: var(--text-light);
+    color: var(--text-dark); /* YOUR NEW BLACK TEXT */
     padding: 12px 25px;
     border-radius: 50px;
     font-weight: 400;
@@ -305,7 +305,7 @@ section h2 {
     max-width: 650px;
     margin: 0 auto 50px auto;
     padding-bottom: 40px;
-    border-bottom: 1px solid #c7c1b9; /* Darker border for beige bg */
+    border-bottom: 1px solid #c7c1b9;
 }
 .project-card:last-child {
     border-bottom: none;
@@ -322,7 +322,7 @@ section h2 {
 .project-status {
     font-weight: 300;
     font-style: italic;
-    color: #0A66C2; /* Using the raw color value here for clarity */
+    color: #0A66C2;
 }
 .education-item {
     margin-bottom: 30px;
