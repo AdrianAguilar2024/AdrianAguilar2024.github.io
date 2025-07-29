@@ -5,7 +5,7 @@
 :root {
     --bg-dark: #121212;
     --bg-light: #FFFFFF;
-    --bg-grey: #E3E3E3;
+    --bg-grey: #f2ede6; /* YOUR NEW BEIGE BACKGROUND */
     --text-light: #FFFFFF;
     --text-dark: #1C1E21;
     --text-muted-dark: #65676B;
@@ -13,8 +13,8 @@
     --skill-pill-bg: #858585;
     --project-btn-bg: #E0D4C5;
     --project-btn-hover: #c9bbae;
-    --linkedin-blue: #c5d1e0; /* YOUR NEW LINKEDIN BUTTON COLOR */
-    --linkedin-hover: #a9b8cc; /* NEW darker shade for hover */
+    --linkedin-blue: #c5d1e0;
+    --linkedin-hover: #a9b8cc;
 }
 
 /* --- General Reset & Body Styles --- */
@@ -100,8 +100,9 @@ body {
 
 .btn-linkedin {
     background-color: var(--linkedin-blue);
-    color: #FFFFFF;
+    color: var(--text-dark); /* NEW black text */
     font-weight: bold;
+    border: 1px solid var(--text-dark); /* NEW black outline */
 }
 .btn-linkedin:hover {
     background-color: var(--linkedin-hover);
@@ -200,7 +201,7 @@ body {
 
 #projects,
 #contact {
-    background-color: var(--bg-grey);
+    background-color: var(--bg-grey); /* USING YOUR NEW BEIGE BACKGROUND */
     color: var(--text-dark);
 }
 
@@ -304,7 +305,7 @@ section h2 {
     max-width: 650px;
     margin: 0 auto 50px auto;
     padding-bottom: 40px;
-    border-bottom: 1px solid #a0a0a0;
+    border-bottom: 1px solid #c7c1b9; /* Darker border for beige bg */
 }
 .project-card:last-child {
     border-bottom: none;
@@ -321,7 +322,7 @@ section h2 {
 .project-status {
     font-weight: 300;
     font-style: italic;
-    color: var(--linkedin-blue);
+    color: #0A66C2; /* Using the raw color value here for clarity */
 }
 .education-item {
     margin-bottom: 30px;
