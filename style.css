@@ -5,13 +5,13 @@
 :root {
     --bg-dark: #121212;
     --bg-light: #FFFFFF;
-    --bg-grey: #BABABA; /* New grey for Projects and Footer */
-    --text-light: #EAEAEA;
+    --bg-grey: #E3E3E3; /* NEW grey for Projects and Footer */
+    --text-light: #FFFFFF; /* Changed to pure white for better contrast */
     --text-dark: #1C1E21;
     --text-muted-dark: #65676B;
     --text-muted-light: #B0B3B8;
-    --skill-pill-bg: #A8A8A8;   /* New color for skill pills */
-    --project-btn-bg: #D4C0AB;   /* New color for primary/project buttons */
+    --skill-pill-bg: #858585;   /* NEW color for skill pills */
+    --project-btn-bg: #D4C0AB;   /* NEW color for primary/project buttons */
     --project-btn-hover: #bca894; /* Darker shade for hover */
     --linkedin-blue: #0A66C2;
 }
@@ -90,7 +90,7 @@ body {
 .btn-primary { /* "Get in Touch" button */
     background-color: var(--project-btn-bg);
     color: var(--text-dark);
-    border: 1px solid var(--project-btn-bg);
+    border: 1px solid var(--text-dark); /* NEW black outline */
 }
 .btn-primary:hover {
     transform: scale(1.05);
@@ -111,6 +111,7 @@ body {
     background-color: var(--project-btn-bg);
     color: var(--text-dark) !important;
     padding: 8px 20px;
+    border: 1px solid var(--text-dark); /* NEW black outline */
 }
 .btn-project:hover {
     background-color: var(--project-btn-hover);
@@ -292,7 +293,7 @@ section h2 {
 }
 .skill-pill {
     background-color: var(--skill-pill-bg);
-    color: var(--text-dark); /* NEW BLACK TEXT */
+    color: var(--text-light); /* NEW WHITE TEXT */
     padding: 12px 25px;
     border-radius: 50px;
     font-weight: 400;
@@ -302,7 +303,7 @@ section h2 {
     max-width: 650px;
     margin: 0 auto 50px auto;
     padding-bottom: 40px;
-    border-bottom: 1px solid #a0a0a0; /* Darker border for grey bg */
+    border-bottom: 1px solid #a0a0a0;
 }
 .project-card:last-child {
     border-bottom: none;
@@ -365,4 +366,4 @@ section h2 {
     section {
         padding: 60px 20px;
     }
-}
+}```
