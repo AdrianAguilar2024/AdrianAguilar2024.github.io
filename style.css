@@ -177,6 +177,7 @@ body {
     margin-bottom: 40px;
 }
 
+/* --- NEW Two-Column About Me Layout --- */
 .about-flex-container {
     display: flex;
     align-items: center;
@@ -205,25 +206,26 @@ body {
     font-size: 1rem;
     font-weight: 300;
     margin-bottom: 15px;
+    text-align: center; /* THIS IS THE FIX */
 }
 .about-text-column .about-text {
     font-size: 1.1rem;
     font-weight: 300;
 }
 .about-text-column .button-wrapper {
-    text-align: left;
+    text-align: center; /* THIS IS THE FIX */
 }
 
 /* --- Section-Specific Backgrounds --- */
 #skills,
-#contact { /* Footer is now dark */
+#completed-projects,
+#contact {
     background-color: var(--bg-dark);
     color: var(--text-light);
 }
 
 #projects,
-#education,
-#completed-projects { /* Education is now light/grey */
+#education {
     background-color: var(--bg-grey);
     color: var(--text-dark);
 }
@@ -239,23 +241,18 @@ section h2 {
     margin-bottom: 50px;
 }
 
-#skills h2 { /* Titles in dark sections stay light */
+#skills h2, #completed-projects h2, #contact h2 {
     color: var(--text-light);
 }
 
 /* --- Completed Projects Section Text Color Override --- */
-#completed-projects {
-    background-color: var(--bg-dark); /* Special dark background */
-}
-#completed-projects h2,
 #completed-projects h3,
 #completed-projects p {
-    color: var(--text-light); /* FORCES all text in this section to be white */
+    color: var(--text-light);
 }
 #completed-projects .project-card {
-    border-bottom-color: #444; /* Darker border for the dark theme */
+    border-bottom-color: #444;
 }
-
 
 /* --- Mobile Navigation Styles --- */
 .mobile-nav-toggle {
@@ -330,7 +327,7 @@ section h2 {
     font-size: 1.5rem; font-weight: 600;
 }
 #education p {
-    color: var(--text-muted-dark); /* Education text is now dark */
+    color: var(--text-muted-dark);
 }
 .footer-content {
     text-align: center;
@@ -339,7 +336,7 @@ section h2 {
     margin-bottom: 40px;
 }
 .copyright {
-    color: var(--text-muted-light); /* Footer text is now light */
+    color: var(--text-muted-light);
     font-weight: 300; font-size: 0.9rem;
 }
 
