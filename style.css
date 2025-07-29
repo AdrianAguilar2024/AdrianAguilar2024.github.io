@@ -148,8 +148,8 @@ body {
     color: var(--text-dark);
 
     /* The White -> Eggshell -> Grey Fade */
-    background: linear-gradient(
-        135deg,
+    background-image: linear-gradient(
+        to bottom right,
         #FFFFFF 0%,
         #F0EAD6 50%,
         #bdbdbd 100%
