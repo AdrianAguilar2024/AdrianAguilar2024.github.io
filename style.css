@@ -5,14 +5,14 @@
 :root {
     --bg-dark: #121212;
     --bg-light: #FFFFFF;
-    --bg-grey: #E3E3E3; /* NEW grey for Projects and Footer */
-    --text-light: #FFFFFF; /* Changed to pure white for better contrast */
+    --bg-grey: #E3E3E3;
+    --text-light: #FFFFFF;
     --text-dark: #1C1E21;
     --text-muted-dark: #65676B;
     --text-muted-light: #B0B3B8;
-    --skill-pill-bg: #858585;   /* NEW color for skill pills */
-    --project-btn-bg: #D4C0AB;   /* NEW color for primary/project buttons */
-    --project-btn-hover: #bca894; /* Darker shade for hover */
+    --skill-pill-bg: #858585;
+    --project-btn-bg: #E0D4C5;   /* YOUR NEW BEIGE COLOR */
+    --project-btn-hover: #c9bbae; /* NEW darker shade for hover */
     --linkedin-blue: #0A66C2;
 }
 
@@ -37,7 +37,7 @@ body {
 
 /* --- Header & Navigation --- */
 .main-header {
-    background-color: #D4C0AB;
+    background-color: #E0D4C5; /* YOUR NEW BEIGE COLOR */
     color: var(--text-dark);
     padding: 20px 0;
     position: sticky;
@@ -90,7 +90,7 @@ body {
 .btn-primary { /* "Get in Touch" button */
     background-color: var(--project-btn-bg);
     color: var(--text-dark);
-    border: 1px solid var(--text-dark); /* NEW black outline */
+    border: 1px solid var(--text-dark);
 }
 .btn-primary:hover {
     transform: scale(1.05);
@@ -111,7 +111,7 @@ body {
     background-color: var(--project-btn-bg);
     color: var(--text-dark) !important;
     padding: 8px 20px;
-    border: 1px solid var(--text-dark); /* NEW black outline */
+    border: 1px solid var(--text-dark);
 }
 .btn-project:hover {
     background-color: var(--project-btn-hover);
@@ -199,7 +199,7 @@ body {
 
 #projects,
 #contact {
-    background-color: var(--bg-grey); /* NEW GREY BACKGROUND */
+    background-color: var(--bg-grey);
     color: var(--text-dark);
 }
 
@@ -293,7 +293,7 @@ section h2 {
 }
 .skill-pill {
     background-color: var(--skill-pill-bg);
-    color: var(--text-light); /* NEW WHITE TEXT */
+    color: var(--text-light);
     padding: 12px 25px;
     border-radius: 50px;
     font-weight: 400;
@@ -366,4 +366,4 @@ section h2 {
     section {
         padding: 60px 20px;
     }
-}```
+}
