@@ -34,20 +34,14 @@ body {
     padding: 0 20px;
 }
 
-/* --- The Hero Wrapper (Holds the Gradient) --- */
-.hero-wrapper {
-    color: var(--text-dark);
-    background-color: #DCDCDC; /* Solid grey background */
-}
-
 /* --- Header & Navigation --- */
 .main-header {
+    background-color: #948D8D; /* Your new solid grey background */
+    color: var(--text-light); /* Set text to light for contrast */
     padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: transparent;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .main-nav {
@@ -65,19 +59,19 @@ body {
 
 .nav-links {
     list-style: none;
-    display: flex; /* Will be hidden on mobile */
+    display: flex;
     gap: 30px;
 }
 
 .nav-links a {
-    color: var(--text-dark);
+    color: var(--text-light); /* Light text on grey background */
     text-decoration: none;
     font-weight: 300;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #000000;
+    color: #FFFFFF;
 }
 
 /* --- Buttons --- */
@@ -93,13 +87,13 @@ body {
 }
 
 .btn-primary {
-    background-color: #000000;
-    color: #FFFFFF;
-    border: 1px solid #000000;
+    background-color: #FFFFFF;
+    color: #1C1E21;
+    border: 1px solid #FFFFFF;
 }
 .btn-primary:hover {
     transform: scale(1.05);
-    background-color: #333333;
+    background-color: #f0f0f0;
 }
 
 .btn-linkedin {
@@ -127,7 +121,7 @@ body {
     margin-top: 30px;
 }
 
-/* --- Hero Section (Content Only) --- */
+/* --- Hero Section (About Me) --- */
 #hero {
     min-height: 80vh;
     display: flex;
@@ -135,21 +129,46 @@ body {
     justify-content: center;
     padding: 60px 0;
     text-align: center;
+    position: relative; /* Needed for the overlay */
+    color: var(--text-light); /* Text must be light to be seen on the image */
+
+    /* The new background image */
+    background-image: url('images/backGroundPhoto.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Dark overlay for readability */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 1; /* Sits between the background and the content */
 }
 
 .hero-content {
     max-width: 700px;
+    position: relative; /* Sits on top of the overlay */
+    z-index: 2;
 }
 
 .hero-content h1 {
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 10px;
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.5); /* Shadow for pop */
 }
 
 .hero-content h2,
-.hero-content .location {
-    color: var(--text-muted-dark);
+.hero-content .location,
+.hero-content .about-text {
+    color: var(--text-light); /* Ensure all text is light */
+    text-shadow: 0px 1px 3px rgba(0,0,0,0.5);
 }
 
 .hero-content h2 {
@@ -199,9 +218,10 @@ section h2 {
     color: var(--text-light);
 }
 
+
 /* --- Mobile Navigation Styles --- */
 .mobile-nav-toggle {
-    display: none; /* Hidden by default, shown on mobile */
+    display: none;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -212,12 +232,11 @@ section h2 {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--text-dark);
+    background-color: var(--text-light); /* Hamburger is now light */
     margin: 5px 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Hamburger animation to 'X' */
 .mobile-nav-toggle.is-open .hamburger-line:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -238,13 +257,13 @@ section h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateX(100%); /* Hidden off-screen to the right */
+    transform: translateX(100%);
     transition: transform 0.4s ease-in-out;
     z-index: 9998;
 }
 
 .mobile-nav-links.is-open {
-    transform: translateX(0); /* Slides into view */
+    transform: translateX(0);
 }
 
 .mobile-nav-links ul {
@@ -262,9 +281,9 @@ section h2 {
     font-size: 2rem;
 }
 
+
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
-    /* Hide desktop nav and show mobile hamburger */
     .nav-links, .desktop-only {
         display: none;
     }
@@ -272,9 +291,8 @@ section h2 {
         display: block;
     }
 
-    /* Adjust sizing for smaller screens */
     .logo {
-        width: 60px; /* Make logo smaller on mobile */
+        width: 60px;
     }
     .hero-content h1 {
         font-size: 2.5rem;
@@ -283,6 +301,67 @@ section h2 {
         font-size: 1.2rem;
     }
     section {
-        padding: 60px 20px; /* Add more horizontal padding */
+        padding: 60px 20px;
     }
+}
+
+/* (The rest of your styles for skills, projects, etc., follow) */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+.skill-pill {
+    background-color: var(--skill-pill-bg);
+    color: var(--text-light);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 400;
+}
+.project-card {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 50px auto;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.project-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+#projects h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+#projects p {
+    color: var(--text-muted-dark);
+    margin: 10px 0;
+}
+.project-status {
+    font-weight: 300;
+    font-style: italic;
+    color: var(--linkedin-blue);
+}
+.education-item {
+    margin-bottom: 30px;
+    text-align: center;
+}
+#education h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+#education p {
+    color: var(--text-muted-light);
+}
+.footer-content {
+    text-align: center;
+}
+.footer-content .btn {
+    margin-bottom: 40px;
+}
+.copyright {
+    color: var(--text-muted-dark);
+    font-weight: 300;
+    font-size: 0.9rem;
 }
