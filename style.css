@@ -131,7 +131,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 0;
+    padding: 80px 0;
     position: relative;
     color: var(--text-light);
 
@@ -153,83 +153,83 @@ body {
 }
 
 .hero-content {
+    width: 100%; /* Take up the full width of the container */
     max-width: 900px;
     position: relative;
     z-index: 2;
 }
 
-/* --- New Two-Column Layout --- */
-.about-flex-container {
+/* --- New Hero Layout --- */
+.hero-top {
     display: flex;
-    align-items: center; /* Vertically centers the content in each column */
+    align-items: center;
+    justify-content: space-between;
     gap: 40px;
 }
 
-.about-text-column {
-    flex: 1; /* Takes up 50% of the space */
+.hero-titles-column {
+    flex: 2;
     text-align: left;
-    padding-right: 40px; /* Space before the separator line */
-    position: relative;
 }
-
-/* The Separator Line */
-.about-text-column::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 10%;
-    height: 80%;
-    width: 1px;
-    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white line */
-}
-
-.about-image-column {
-    flex: 1; /* Takes up 50% of the space */
+.hero-image-column {
+    flex: 1;
     text-align: center;
 }
 
+.hero-titles-column h1,
+.hero-titles-column h2,
+.hero-titles-column .location {
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+    color: var(--text-light);
+}
+.hero-titles-column h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+.hero-titles-column h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.hero-titles-column .location {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-top: 10px;
+}
 .profile-picture {
-    max-width: 80%; /* Control the size of the picture */
+    max-width: 250px;
     height: auto;
     border-radius: 50%;
     border: 4px solid #FFFFFF;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.about-text-column h1,
-.about-text-column h2,
-.about-text-column .location {
-    text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
-    color: var(--text-light);
+/* Separator Line */
+.hero-separator {
+    width: 80%;
+    margin: 40px auto;
+    border: none;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.4);
 }
-.about-text-column h1 {
-    font-size: 3rem;
-    font-weight: 700;
+
+.hero-bottom {
+    text-align: center;
 }
-.about-text-column h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-}
-.about-text-column .location {
-    font-size: 1.2rem;
-    font-weight: 300;
-    margin-bottom: 30px;
-}
-.about-text-column .about-text {
+.hero-bottom .about-text {
     color: var(--text-light);
     text-shadow: 0px 1px 3px rgba(0,0,0,0.5);
     font-size: 1.1rem;
     font-weight: 300;
-    margin-bottom: 30px;
-}
-.about-text-column .button-wrapper {
-    text-align: left; /* Keep button aligned with text */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* --- Section-Specific Backgrounds --- */
 #skills,
 #completed-projects,
-#contact {
+#contact,
+#tech-term {
     background-color: var(--bg-dark);
     color: var(--text-light);
 }
@@ -258,37 +258,39 @@ section h2 {
     color: var(--text-dark);
 }
 
-/* --- Tech Term of the Day (Now part of Completed Projects) --- */
+/* --- Tech Term of the Day --- */
 .tech-term-card {
     background-color: #2a2a2a;
     border-radius: 15px;
     overflow: hidden;
-    max-width: 650px;
-    margin: 20px auto 0 auto;
+    max-width: 800px;
+    margin: 0 auto;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 #tech-term-image {
     width: 100%;
-    max-height: 250px;
+    height: 400px;
     object-fit: cover;
     display: block;
 }
 .tech-term-content {
-    padding: 25px;
-}
-.tech-term-content h3,
-.tech-term-content p {
-    color: var(--text-light);
+    padding: 30px;
 }
 .tech-term-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+.tech-term-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-light);
 }
 .term-date {
     font-style: italic;
     color: var(--text-muted-light);
     margin-bottom: 15px;
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 /* --- Completed Projects & GitHub Repositories Sections --- */
@@ -338,24 +340,12 @@ section h2 {
     .nav-links, .desktop-only { display: none; }
     .mobile-nav-toggle { display: block; }
     .logo { width: 60px; }
-    .hero-content h1 { font-size: 2.5rem; }
-    .hero-content h2, .hero-content .location { font-size: 1.2rem; }
+    .hero-titles-column h1 { font-size: 2.5rem; }
+    .hero-titles-column h2, .hero-titles-column .location { font-size: 1.2rem; }
     section { padding: 60px 20px; }
     .project-images { flex-direction: column; align-items: center; }
     .project-images img { max-width: 90%; }
-    .about-flex-container {
-        flex-direction: column;
-    }
-    .about-text-column {
-        text-align: center;
-        padding-right: 0;
-        border-right: none;
-    }
-    .about-text-column::after {
-        display: none; /* Hide the separator line on mobile */
-    }
-    .about-image-column {
-        order: -1;
-        margin-bottom: 30px;
-    }
+    .hero-top { flex-direction: column; }
+    .hero-titles-column { text-align: center; }
+    .hero-image-column { order: -1; margin-bottom: 30px; }
 }
