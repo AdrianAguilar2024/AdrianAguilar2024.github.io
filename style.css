@@ -187,16 +187,21 @@ body {
     font-weight: 700;
     margin-bottom: 15px;
 }
-.hero-titles-column h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-top: 0; /* THIS IS THE FIX */
-    margin-bottom: 15px;
-}
+
+/* THIS IS THE FIX: Unify the h2 and location styles */
+.hero-titles-column h2,
 .hero-titles-column .location {
-    font-size: 1.2rem;
-    font-weight: 300;
+    font-size: 1.5rem;   /* Makes them the same size */
+    font-weight: 400;    /* Makes them the same weight */
+    margin-top: 0;
+    margin-bottom: 15px; /* Creates even spacing between all lines */
 }
+
+/* This rule is just to remove the margin from the very last line */
+.hero-titles-column .location {
+    margin-bottom: 0;
+}
+
 .profile-picture {
     max-width: 250px;
     height: auto;
