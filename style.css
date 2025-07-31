@@ -177,7 +177,6 @@ body {
     margin-bottom: 40px;
 }
 
-/* --- Two-Column About Me Layout --- */
 .about-flex-container {
     display: flex;
     align-items: center;
@@ -218,7 +217,7 @@ body {
 
 /* --- Section-Specific Backgrounds --- */
 #skills,
-#completed-projects,
+#completed-projects, /* THIS SECTION IS NOW DARK */
 #contact {
     background-color: var(--bg-dark);
     color: var(--text-light);
@@ -245,14 +244,53 @@ section h2 {
     color: var(--text-light);
 }
 
-/* --- Completed Projects Section Text Color Override --- */
+/* --- Completed Projects Section --- */
 #completed-projects h3,
 #completed-projects p {
-    color: var(--text-light);
+    color: var(--text-light); /* Ensures text is white */
 }
 #completed-projects .project-card {
     border-bottom-color: #444;
 }
+
+/* --- NEW Styles for Tech Term of the Day --- */
+.tech-term-card {
+    background-color: #2a2a2a; /* Dark background for the card */
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 650px; /* Consistent with other project cards */
+    margin: 20px auto 0 auto; /* Centered with space */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+#tech-term-image {
+    width: 100%;
+    height: 250px; /* SMALLER IMAGE HEIGHT */
+    object-fit: cover;
+    display: block;
+}
+.tech-term-content {
+    padding: 25px;
+}
+.tech-term-content h3,
+.tech-term-content p {
+    color: var(--text-light); /* Ensures text inside is white */
+}
+.tech-term-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.term-date {
+    font-style: italic;
+    color: var(--text-muted-light);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+.tech-term-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+/* End of Tech Term Styles */
+
 
 /* --- Mobile Navigation Styles --- */
 .mobile-nav-toggle {
@@ -289,13 +327,6 @@ section h2 {
 .mobile-nav-links a {
     color: var(--text-light); text-decoration: none; font-size: 2rem;
 }
-
-/* --- Mobile Nav Button Fix --- */
-.mobile-nav-links .btn-linkedin {
-    color: var(--text-dark); /* THIS IS THE FIX: Forces text to be black */
-    font-size: 1rem;         /* Overrides the large menu link font size */
-}
-
 
 /* --- Project Image Gallery Styles --- */
 .project-images {
@@ -382,41 +413,4 @@ section h2 {
         order: -1;
         margin-bottom: 30px;
     }
-    /* --- Daily Tech Term Section --- */
-#tech-term {
-    padding: 80px 0;
-    background-color: var(--bg-dark); /* Or choose another background */
-    color: var(--text-light);
-}
-.tech-term-card {
-    background-color: #2a2a2a;
-    border-radius: 15px;
-    overflow: hidden; /* Keeps the image corners rounded */
-    max-width: 800px;
-    margin: 0 auto;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-#tech-term-image {
-    width: 100%;
-    height: 400px; /* Fixed height for the image */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    display: block;
-}
-.tech-term-content {
-    padding: 30px;
-}
-.tech-term-content h3 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-.tech-term-content p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-}
-.term-date {
-    font-style: italic;
-    color: var(--text-muted-light);
-    margin-bottom: 15px;
-    font-size: 1rem;
-}
 }
