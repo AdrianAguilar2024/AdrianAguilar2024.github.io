@@ -54,62 +54,36 @@
             <div class="hero-content">
                 <h1>Adrian Aguilar</h1>
                 <h2>Software Engineer & Automation Enthusiast</h2>
-                <p class="location">Fort Collins - Boulder</p>
                 
                 <div class="about-flex-container">
                     <div class="about-text-column">
+                        <p class="location">Fort Collins - Boulder</p>
                         <p class="about-text">
                             Hello! I'm a passionate learner dedicated to becoming a software engineer. I enjoy solving complex problems and building automated solutions that make life easier. My journey is focused on mastering Python, understanding APIs, and creating practical, real-world projects.
                             <br><br>
                             This portfolio is a live demonstration of my skills. It was built from scratch with **HTML/CSS/JS** and features a **"Tech Term of the Day"** section below that is automatically updated daily by a Python web scraping bot I created.
                         </p>
+                        <div class="button-wrapper">
+                            <a href="#contact" class="btn btn-primary">Get in touch</a>
+                        </div>
                     </div>
                     <div class="about-image-column">
                         <img src="images/ProfilePic.jpeg" alt="A profile picture of Adrian Aguilar" class="profile-picture">
                     </div>
                 </div>
-
-                <div class="button-wrapper">
-                    <a href="#contact" class="btn btn-primary">Get in touch</a>
-                </div>
             </div>
         </section>
 
-        <section id="completed-projects">
+        <!-- Tech Term of the Day Section -->
+        <section id="tech-term">
             <div class="container">
-                <h2>Completed Projects & Live Demos</h2>
-                <div class="project-card" id="tech-term-project">
-                    <h3>Live Demo: Tech Term of the Day</h3>
-                    <p>This is a live demonstration of a fully automated Python bot. Every day, a GitHub Actions workflow runs a script that fetches a new technical term and a relevant image, then automatically updates this section of my portfolio.</p>
-                    <div class="tech-term-card">
-                        <img src="https://via.placeholder.com/800x400" alt="Tech Term of the Day Image" id="tech-term-image">
-                        <div class="tech-term-content">
-                            <h3 id="tech-term-title">Loading...</h3>
-                            <p id="tech-term-date" class="term-date"></p>
-                            <p id="tech-term-definition">Please wait while we fetch today's term.</p>
-                        </div>
-                    </div>
-                    <div class="button-wrapper">
-                         <a href="https://github.com/AdrianAguilar2024/website-daily-tech-term-bot" target="_blank" class="btn btn-project">View Bot Code on GitHub</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>JS Lawncare - Live Client Website</h3>
-                    <p>Designed and developed a responsive, professional website for a local lawn care business. This project involved direct client communication to meet their business needs. Technologies used include HTML, CSS, and JavaScript for a clean, user-friendly interface. Handled the entire process from development to deployment.</p>
-                    <div class="project-images">
-                        <img src="images/js-lawn1.png" alt="JS Lawncare homepage screenshot">
-                        <img src="images/js-lawn2.png" alt="JS Lawncare services section screenshot">
-                        <img src="images/js-lawn3.png" alt="JS Lawncare contact form screenshot">
-                    </div>
-                    <div class="button-wrapper">
-                        <a href="https://js-lawncare.com/" target="_blank" class="btn btn-primary">View Live Site</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>Job Search Automation Bot <span class="project-status">(runs every Sunday)</span></h3>
-                    <p>A Python script that automates job searches. This project is fully functional and runs on a reliable weekly schedule using GitHub Actions to deliver results.</p>
-                    <div class="button-wrapper">
-                        <a href="https://github.com/AdrianAguilar2024/job-search-automation" target="_blank" class="btn btn-project">View on GitHub</a>
+                <h2>Tech Term of the Day</h2>
+                <div class="tech-term-card">
+                    <img src="https://via.placeholder.com/800x400" alt="Tech Term of the Day Image" id="tech-term-image">
+                    <div class="tech-term-content">
+                        <h3 id="tech-term-title">Loading...</h3>
+                        <p id="tech-term-date" class="term-date"></p>
+                        <p id="tech-term-definition">Please wait while we fetch today's term.</p>
                     </div>
                 </div>
             </div>
@@ -131,6 +105,31 @@
                     <span class="skill-pill">Responsive Design</span>
                     <span class="skill-pill">English (Native)</span>
                     <span class="skill-pill">Spanish (Fluent)</span>
+                </div>
+            </div>
+        </section>
+        
+        <section id="completed-projects">
+            <div class="container">
+                <h2>Completed Projects</h2>
+                <div class="project-card">
+                    <h3>JS Lawncare - Live Client Website</h3>
+                    <p>Designed and developed a responsive, professional website for a local lawn care business. This project involved direct client communication to meet their business needs. Technologies used include HTML, CSS, and JavaScript for a clean, user-friendly interface. Handled the entire process from development to deployment.</p>
+                    <div class="project-images">
+                        <img src="images/js-lawn1.png" alt="JS Lawncare homepage screenshot">
+                        <img src="images/js-lawn2.png" alt="JS Lawncare services section screenshot">
+                        <img src="images/js-lawn3.png" alt="JS Lawncare contact form screenshot">
+                    </div>
+                    <div class="button-wrapper">
+                        <a href="https://js-lawncare.com/" target="_blank" class="btn btn-primary">View Live Site</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Job Search Automation Bot <span class="project-status">(runs every Sunday)</span></h3>
+                    <p>A Python script that automates job searches. This project is fully functional and runs on a reliable weekly schedule using GitHub Actions to deliver results.</p>
+                    <div class="button-wrapper">
+                        <a href="https://github.com/AdrianAguilar2024/job-search-automation" target="_blank" class="btn btn-project">View on GitHub</a>
+                    </div>
                 </div>
             </div>
         </section>
