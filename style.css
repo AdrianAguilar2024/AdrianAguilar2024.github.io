@@ -169,7 +169,7 @@ body {
 
 .hero-titles-column {
     flex: 2;
-    text-align: left; /* THIS IS THE FIX: Aligns all text in this column to the left */
+    text-align: left;
 }
 .hero-image-column {
     flex: 1;
@@ -195,6 +195,7 @@ body {
 .hero-titles-column .location {
     font-size: 1.2rem;
     font-weight: 300;
+    padding-left: 1rem; /* THIS IS THE FIX: Adds the indent */
 }
 .profile-picture {
     max-width: 250px;
