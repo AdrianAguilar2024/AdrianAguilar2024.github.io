@@ -25,7 +25,7 @@
                 <ul class="nav-links">
                     <li><a href="#hero">About me</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">My Projects</a></li>
+                    <li><a href="#completed-projects">Projects</a></li>
                     <li><a href="#education">Education</a></li>
                 </ul>
                 <a href="https://www.linkedin.com/in/leo-a-aguilar" target="_blank" class="btn btn-linkedin desktop-only">Connect on LinkedIn</a>
@@ -43,7 +43,7 @@
         <ul>
             <li><a href="#hero">About me</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">My Projects</a></li>
+            <li><a href="#completed-projects">Projects</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="https://www.linkedin.com/in/leo-a-aguilar" target="_blank" class="btn btn-linkedin">Connect on LinkedIn</a></li>
         </ul>
@@ -52,12 +52,10 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <!-- Top part with two columns -->
                 <div class="hero-top">
                     <div class="hero-titles-column">
                         <h1>Adrian Aguilar</h1>
-                        <p class="location">Software Engineer & Automation Enthusiast</p>
-                        <br> 
+                        <h2>Software Engineer & Automation Enthusiast</h2>
                         <p class="location">Fort Collins - Boulder</p>
                     </div>
                     <div class="hero-image-column">
@@ -65,32 +63,16 @@
                     </div>
                 </div>
 
-                <!-- Separator Line -->
                 <hr class="hero-separator">
 
-                <!-- Bottom part with centered text -->
                 <div class="hero-bottom">
                     <p class="about-text">
                         Hello! I'm a passionate learner dedicated to becoming a software engineer. I enjoy solving complex problems and building automated solutions that make life easier. My journey is focused on mastering Python, understanding APIs, and creating practical, real-world projects.
                         <br><br>
-                        This very portfolio is a practical example of my hands-on approach, built from scratch using fundamental web technologies like **HTML**, **CSS**, and a touch of **JavaScript** to create a responsive, mobile-friendly experience. It's a testament to my belief in understanding the fundamentals and my journey into front-end development.
+                        This very portfolio is a practical example of my hands-on approach, built from scratch using fundamental web technologies like **HTML**, **CSS**, and a touch of **JavaScript** to create a responsive, mobile-friendly experience.
                     </p>
                     <div class="button-wrapper">
                         <a href="#contact" class="btn btn-primary">Get in touch</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="tech-term">
-            <div class="container">
-                <h2>Tech Term of the Day</h2>
-                <div class="tech-term-card">
-                    <img src="https://via.placeholder.com/800x400" alt="Tech Term of the Day Image" id="tech-term-image">
-                    <div class="tech-term-content">
-                        <h3 id="tech-term-title">Loading...</h3>
-                        <p id="tech-term-date" class="term-date"></p>
-                        <p id="tech-term-definition">Please wait while we fetch today's term.</p>
                     </div>
                 </div>
             </div>
@@ -118,7 +100,25 @@
         
         <section id="completed-projects">
             <div class="container">
-                <h2>Completed Projects</h2>
+                <h2>Completed Projects & Live Demos</h2>
+                
+                <!-- TECH TERM OF THE DAY IS NOW PERMANENTLY THE FIRST PROJECT -->
+                <div class="project-card">
+                    <h3>Live Demo: Daily Tech Term Bot</h3>
+                    <p>This is a live demonstration of a fully automated Python bot. Every day, a GitHub Actions workflow runs a script that fetches a new term, finds a relevant image, and automatically updates this section. The code for the bot is available on my GitHub.</p>
+                    <div class="tech-term-card">
+                        <img src="https://via.placeholder.com/800x400" alt="Tech Term of the Day Image" id="tech-term-image">
+                        <div class="tech-term-content">
+                            <h3 id="tech-term-title">Loading...</h3>
+                            <p id="tech-term-date" class="term-date"></p>
+                            <p id="tech-term-definition">Please wait while we fetch today's term.</p>
+                        </div>
+                    </div>
+                    <div class="button-wrapper">
+                         <a href="https://github.com/AdrianAguilar2024/website-daily-tech-term-bot" target="_blank" class="btn btn-project">View Bot Code on GitHub</a>
+                    </div>
+                </div>
+
                 <div class="project-card">
                     <h3>JS Lawncare - Live Client Website</h3>
                     <p>Designed and developed a responsive, professional website for a local lawn care business. This project involved direct client communication to meet their business needs. Technologies used include HTML, CSS, and JavaScript for a clean, user-friendly interface. Handled the entire process from development to deployment.</p>
@@ -170,10 +170,10 @@
         
         <section id="education">
             <div class="container">
-                <h2>Education</h2>
+                <h2>Education & Certifications</h2>
                 <div class="education-item">
                     <h3>Bachelors of Science, Computer Science</h3>
-                    <p>CSU Global - 2025</p>
+                    <p>Colorado State University Global - Expected 2025</p>
                 </div>
                 <div class="education-item">
                     <h3>Google AI Essentials</h3>
