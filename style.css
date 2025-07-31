@@ -187,21 +187,16 @@ body {
     font-weight: 700;
     margin-bottom: 15px;
 }
-
-/* THIS IS THE FIX: Unify the h2 and location styles */
-.hero-titles-column h2,
-.hero-titles-column .location {
-    font-size: 1.5rem;   /* Makes them the same size */
-    font-weight: 400;    /* Makes them the same weight */
+.hero-titles-column h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
     margin-top: 0;
-    margin-bottom: 15px; /* Creates even spacing between all lines */
+    margin-bottom: 15px;
 }
-
-/* This rule is just to remove the margin from the very last line */
 .hero-titles-column .location {
-    margin-bottom: 0;
+    font-size: 1.2rem;
+    font-weight: 300;
 }
-
 .profile-picture {
     max-width: 250px;
     height: auto;
@@ -233,16 +228,18 @@ body {
 }
 
 /* --- Section-Specific Backgrounds --- */
+/* DARK SECTIONS */
 #skills,
-#completed-projects,
 #contact,
 #tech-term {
     background-color: var(--bg-dark);
     color: var(--text-light);
 }
 
+/* BEIGE SECTIONS */
 #projects,
-#education {
+#education,
+#completed-projects { /* This section is now light */
     background-color: var(--bg-grey);
     color: var(--text-dark);
 }
@@ -258,21 +255,23 @@ section h2 {
     margin-bottom: 50px;
 }
 
-#skills h2, #completed-projects h2, #tech-term h2, #projects h2 {
+#skills h2, #tech-term h2, #contact h2 {
     color: var(--text-light);
 }
-#education h2 {
+#education h2, #projects h2, #completed-projects h2 {
     color: var(--text-dark);
 }
 
-/* --- Tech Term of the Day --- */
+
+/* --- Tech Term of the Day (Now part of Completed Projects) --- */
 .tech-term-card {
-    background-color: #2a2a2a;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
     border-radius: 15px;
     overflow: hidden;
     max-width: 800px;
     margin: 0 auto;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 #tech-term-image {
     width: 100%;
@@ -286,30 +285,34 @@ section h2 {
 .tech-term-content h3 {
     font-size: 2rem;
     margin-bottom: 15px;
-    color: var(--text-light);
+    color: var(--text-dark);
 }
 .tech-term-content p {
     font-size: 1.1rem;
     line-height: 1.7;
-    color: var(--text-light);
+    color: var(--text-dark);
 }
 .term-date {
     font-style: italic;
-    color: var(--text-muted-light);
+    color: var(--text-muted-dark);
     margin-bottom: 15px;
     font-size: 1rem;
 }
 
 /* --- Completed Projects & GitHub Repositories Sections --- */
 #completed-projects h3,
-#completed-projects p,
+#completed-projects p {
+    color: var(--text-dark);
+}
+#completed-projects .project-card {
+    border-bottom-color: #d8d2ca;
+}
 #projects h3,
 #projects p {
-    color: var(--text-light);
+    color: var(--text-dark);
 }
-#completed-projects .project-card,
 #projects .project-card {
-    border-bottom-color: #444;
+    border-bottom-color: #d8d2ca;
 }
 
 /* --- Mobile Navigation Styles --- */
@@ -355,4 +358,4 @@ section h2 {
     .hero-top { flex-direction: column; }
     .hero-titles-column { text-align: center; }
     .hero-image-column { order: -1; margin-bottom: 30px; }
-}
+}```
