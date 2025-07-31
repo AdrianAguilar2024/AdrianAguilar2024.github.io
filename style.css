@@ -5,7 +5,7 @@
 :root {
     --bg-dark: #121212;
     --bg-light: #FFFFFF;
-    --bg-grey: #f2ede6;
+    --bg-grey: #f2ede6; /* This is our BEIGE color */
     --text-light: #FFFFFF;
     --text-dark: #1C1E21;
     --text-muted-dark: #65676B;
@@ -26,7 +26,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-dark);
+    background-color: var(--bg-dark); /* Fallback for tiny slivers between sections */
     line-height: 1.6;
 }
 
@@ -136,6 +136,8 @@ body {
     position: relative;
     color: var(--text-light);
 
+    /* The background is the photo with a solid beige color behind it */
+    background-color: var(--bg-grey); 
     background-image: url('images/backGroundPhoto.jpg');
     background-size: cover;
     background-position: center center;
@@ -184,7 +186,6 @@ body {
     margin-bottom: 40px;
 }
 
-/* --- Two-Column About Me Layout --- */
 .about-flex-container {
     display: flex;
     align-items: center;
@@ -213,15 +214,17 @@ body {
 }
 
 /* --- Section-Specific Backgrounds --- */
+/* BLACK SECTIONS */
 #skills,
-#completed-projects,
-#contact,
-#projects { /* THIS SECTION IS NOW DARK */
+#projects,
+#contact {
     background-color: var(--bg-dark);
     color: var(--text-light);
 }
 
-#education { /* Only Education is light */
+/* BEIGE SECTIONS */
+#completed-projects,
+#education {
     background-color: var(--bg-grey);
     color: var(--text-dark);
 }
@@ -237,18 +240,24 @@ section h2 {
     margin-bottom: 50px;
 }
 
-#skills h2, #completed-projects h2, #tech-term h2, #projects h2 {
-    color: var(--text-light); /* Ensure title is white */
+/* Ensure titles have the right color based on background */
+#skills h2, #projects h2, #contact h2 {
+    color: var(--text-light);
 }
+#completed-projects h2, #education h2 {
+    color: var(--text-dark);
+}
+
 
 /* --- Tech Term of the Day (Now part of Completed Projects) --- */
 .tech-term-card {
-    background-color: #2a2a2a;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
     border-radius: 15px;
     overflow: hidden;
     max-width: 650px;
     margin: 20px auto 0 auto;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 #tech-term-image {
     width: 100%;
@@ -261,7 +270,7 @@ section h2 {
 }
 .tech-term-content h3,
 .tech-term-content p {
-    color: var(--text-light);
+    color: var(--text-dark);
 }
 .tech-term-content h3 {
     font-size: 1.5rem;
@@ -269,21 +278,25 @@ section h2 {
 }
 .term-date {
     font-style: italic;
-    color: var(--text-muted-light);
+    color: var(--text-muted-dark);
     margin-bottom: 15px;
     font-size: 0.9rem;
 }
 
 /* --- Completed Projects & GitHub Repositories Sections --- */
 #completed-projects h3,
-#completed-projects p,
+#completed-projects p {
+    color: var(--text-dark);
+}
+#completed-projects .project-card {
+    border-bottom-color: #d8d2ca;
+}
 #projects h3,
 #projects p {
-    color: var(--text-light); /* Ensures text is white in both sections */
+    color: var(--text-light);
 }
-#completed-projects .project-card,
 #projects .project-card {
-    border-bottom-color: #444; /* Darker border for the dark theme */
+    border-bottom-color: #444;
 }
 
 /* --- Mobile Navigation Styles --- */
