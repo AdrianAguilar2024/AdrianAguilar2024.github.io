@@ -195,7 +195,7 @@ body {
 .hero-titles-column .location {
     font-size: 1.2rem;
     font-weight: 300;
-    padding-left: 2.5rem; /* THIS IS THE FIX: Increased indent */
+    /* THIS IS THE FIX: The padding-left has been removed */
 }
 .profile-picture {
     max-width: 250px;
