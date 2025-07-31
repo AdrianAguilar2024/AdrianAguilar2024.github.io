@@ -169,7 +169,7 @@ body {
 
 .hero-titles-column {
     flex: 2;
-    text-align: left;
+    text-align: left; /* THIS IS THE FIX: Aligns all text in this column to the left */
 }
 .hero-image-column {
     flex: 1;
@@ -182,17 +182,15 @@ body {
     text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
     color: var(--text-light);
 }
-
-/* THIS IS THE FIX: Set explicit margins for even spacing */
 .hero-titles-column h1 {
     font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 15px; /* Consistent space below */
+    margin-bottom: 15px;
 }
 .hero-titles-column h2 {
     font-size: 1.5rem;
     font-weight: 400;
-    margin-bottom: 15px; /* Consistent space below */
+    margin-bottom: 15px;
 }
 .hero-titles-column .location {
     font-size: 1.2rem;
