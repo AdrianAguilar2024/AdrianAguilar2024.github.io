@@ -214,14 +214,14 @@ body {
 
 /* --- Section-Specific Backgrounds --- */
 #skills,
-#contact { /* Footer and Skills are dark */
+#completed-projects,
+#contact,
+#projects { /* THIS SECTION IS NOW DARK */
     background-color: var(--bg-dark);
     color: var(--text-light);
 }
 
-#projects,
-#education,
-#completed-projects { /* All project/education sections are now light */
+#education { /* Only Education is light */
     background-color: var(--bg-grey);
     color: var(--text-dark);
 }
@@ -237,19 +237,18 @@ section h2 {
     margin-bottom: 50px;
 }
 
-#skills h2 {
-    color: var(--text-light);
+#skills h2, #completed-projects h2, #tech-term h2, #projects h2 {
+    color: var(--text-light); /* Ensure title is white */
 }
 
 /* --- Tech Term of the Day (Now part of Completed Projects) --- */
 .tech-term-card {
-    background-color: #ffffff; /* Lighter card for the light background */
-    border: 1px solid #ddd;
+    background-color: #2a2a2a;
     border-radius: 15px;
     overflow: hidden;
-    max-width: 650px; /* Consistent with other project cards */
+    max-width: 650px;
     margin: 20px auto 0 auto;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 #tech-term-image {
     width: 100%;
@@ -262,7 +261,7 @@ section h2 {
 }
 .tech-term-content h3,
 .tech-term-content p {
-    color: var(--text-dark); /* Text is now dark */
+    color: var(--text-light);
 }
 .tech-term-content h3 {
     font-size: 1.5rem;
@@ -270,20 +269,22 @@ section h2 {
 }
 .term-date {
     font-style: italic;
-    color: var(--text-muted-dark);
+    color: var(--text-muted-light);
     margin-bottom: 15px;
     font-size: 0.9rem;
 }
 
-/* --- Completed Projects Section --- */
+/* --- Completed Projects & GitHub Repositories Sections --- */
 #completed-projects h3,
-#completed-projects p {
-    color: var(--text-dark); /* Text is now dark */
+#completed-projects p,
+#projects h3,
+#projects p {
+    color: var(--text-light); /* Ensures text is white in both sections */
 }
-#completed-projects .project-card {
-    border-bottom-color: #d8d2ca; /* Adjusted border for beige bg */
+#completed-projects .project-card,
+#projects .project-card {
+    border-bottom-color: #444; /* Darker border for the dark theme */
 }
-
 
 /* --- Mobile Navigation Styles --- */
 .mobile-nav-toggle { display: none; background: transparent; border: none; cursor: pointer; z-index: 9999; }
@@ -307,8 +308,6 @@ section h2 {
 .skill-pill { background-color: var(--skill-pill-bg); color: var(--text-dark); padding: 12px 25px; border-radius: 50px; font-weight: 400; }
 .project-card { text-align: center; max-width: 650px; margin: 0 auto 50px auto; padding-bottom: 40px; border-bottom: 1px solid #c7c1b9; }
 .project-card:last-child { border-bottom: none; padding-bottom: 0; }
-#projects h3 { font-size: 1.5rem; font-weight: 600; }
-#projects p { color: var(--text-muted-dark); margin: 10px 0; }
 .project-status { font-weight: 300; font-style: italic; color: #0A66C2; }
 .education-item { margin-bottom: 30px; text-align: center; }
 #education h3 { font-size: 1.5rem; font-weight: 600; }
