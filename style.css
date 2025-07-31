@@ -134,7 +134,7 @@ body {
     padding: 60px 0;
     text-align: center;
     position: relative;
-    color: var(--text-light); /* Text is light on the photo */
+    color: var(--text-light);
 
     background-image: url('images/backGroundPhoto.jpg');
     background-size: cover;
@@ -149,7 +149,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* The dark overlay */
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
@@ -160,8 +160,7 @@ body {
 }
 
 .hero-content h1,
-.hero-content h2,
-.hero-content .location {
+.hero-content h2 {
     text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
     color: var(--text-light);
 }
@@ -175,13 +174,7 @@ body {
 .hero-content h2 {
     font-size: 1.5rem;
     font-weight: 400;
-}
-
-.hero-content .location {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-top: 15px; /* Space from the title above */
-    margin-bottom: 40px; /* Space to the content below */
+    margin-bottom: 40px;
 }
 
 /* --- Two-Column About Me Layout --- */
@@ -189,10 +182,10 @@ body {
     display: flex;
     align-items: center;
     gap: 40px;
-    margin-bottom: 40px;
 }
 .about-text-column {
     flex: 2;
+    text-align: left;
 }
 .about-image-column {
     flex: 1;
@@ -204,30 +197,40 @@ body {
     border: 4px solid #FFFFFF;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
+.about-text-column .location,
 .about-text-column .about-text {
     color: var(--text-light);
     text-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+.about-text-column .location {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.about-text-column .about-text {
     font-size: 1.1rem;
     font-weight: 300;
-    text-align: left; /* Keep paragraph readable */
+}
+.about-text-column .button-wrapper {
+    text-align: left;
 }
 
 /* --- Section-Specific Backgrounds --- */
 #skills,
 #completed-projects,
-#contact { /* Footer is now dark */
+#contact {
     background-color: var(--bg-dark);
     color: var(--text-light);
 }
 
 #projects,
-#education { /* Education is now light/grey */
+#education {
     background-color: var(--bg-grey);
     color: var(--text-dark);
 }
 
 /* Other sections */
-#skills, #projects, #education, #contact, #completed-projects {
+#skills, #projects, #education, #contact, #completed-projects, #tech-term {
     padding: 80px 0;
 }
 
@@ -237,9 +240,48 @@ section h2 {
     margin-bottom: 50px;
 }
 
-#skills h2, #completed-projects h2 {
+#skills h2, #completed-projects h2, #tech-term h2 {
     color: var(--text-light);
 }
+
+/* --- Tech Term Section --- */
+#tech-term {
+    background-color: var(--bg-dark);
+}
+.tech-term-card {
+    background-color: #2a2a2a;
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+#tech-term-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+.tech-term-content {
+    padding: 30px;
+}
+.tech-term-content h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+.tech-term-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+}
+.term-date {
+    font-style: italic;
+    color: var(--text-muted-light);
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
 
 /* --- Completed Projects Section --- */
 #completed-projects h3,
@@ -248,39 +290,6 @@ section h2 {
 }
 #completed-projects .project-card {
     border-bottom-color: #444;
-}
-
-/* --- Styles for Tech Term of the Day --- */
-.tech-term-card {
-    background-color: #2a2a2a;
-    border-radius: 15px;
-    overflow: hidden;
-    max-width: 650px;
-    margin: 20px auto 0 auto;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-#tech-term-image {
-    width: 100%;
-    max-height: 250px; /* THIS IS THE FIX: Constrains the image height */
-    object-fit: cover;
-    display: block;
-}
-.tech-term-content {
-    padding: 25px;
-}
-.tech-term-content h3,
-.tech-term-content p {
-    color: var(--text-light);
-}
-.tech-term-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-.term-date {
-    font-style: italic;
-    color: var(--text-muted-light);
-    margin-bottom: 15px;
-    font-size: 0.9rem;
 }
 
 /* --- Mobile Navigation Styles --- */
@@ -321,7 +330,7 @@ section h2 {
     .mobile-nav-toggle { display: block; }
     .logo { width: 60px; }
     .hero-content h1 { font-size: 2.5rem; }
-    .hero-content h2, .hero-content .location { font-size: 1.2rem; }
+    .hero-content h2 { font-size: 1.2rem; }
     section { padding: 60px 20px; }
     .project-images { flex-direction: column; align-items: center; }
     .project-images img { max-width: 90%; }
