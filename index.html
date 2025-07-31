@@ -52,12 +52,10 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <!-- Titles are centered by default -->
                 <h1>Adrian Aguilar</h1>
                 <h2>Software Engineer & Automation Enthusiast</h2>
                 <p class="location">Fort Collins - Boulder</p>
                 
-                <!-- The two-column layout now ONLY contains the text and image -->
                 <div class="about-flex-container">
                     <div class="about-text-column">
                         <p class="about-text">
@@ -71,23 +69,8 @@
                     </div>
                 </div>
 
-                <!-- The button wrapper is now outside the flex container, so it can be centered easily -->
                 <div class="button-wrapper">
                     <a href="#contact" class="btn btn-primary">Get in touch</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="tech-term">
-            <div class="container">
-                <h2>Tech Term of the Day</h2>
-                <div class="tech-term-card">
-                    <img src="https://via.placeholder.com/800x400" alt="Tech Term of the Day Image" id="tech-term-image">
-                    <div class="tech-term-content">
-                        <h3 id="tech-term-title">Loading...</h3>
-                        <p id="tech-term-date" class="term-date"></p>
-                        <p id="tech-term-definition">Please wait while we fetch today's term.</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -114,7 +97,26 @@
         
         <section id="completed-projects">
             <div class="container">
-                <h2>Completed Projects</h2>
+                <!-- UPDATED TITLE -->
+                <h2>Completed Projects & Live Demos</h2>
+
+                <!-- TECH TERM OF THE DAY IS NOW THE FIRST PROJECT HERE -->
+                <div class="project-card" id="tech-term-project">
+                    <h3>Live Demo: Daily Tech Term Bot</h3>
+                    <p>This is a live demonstration of a fully automated Python bot. Every day, a GitHub Actions workflow runs a script that fetches a new term, finds a relevant image, and automatically updates this section of my portfolio. The code for this bot is also available on my GitHub.</p>
+                    <div class="tech-term-card">
+                        <img src="https://via.placeholder.com/800x400" alt="Tech Term of the Day Image" id="tech-term-image">
+                        <div class="tech-term-content">
+                            <h3 id="tech-term-title">Loading...</h3>
+                            <p id="tech-term-date" class="term-date"></p>
+                            <p id="tech-term-definition">Please wait while we fetch today's term.</p>
+                        </div>
+                    </div>
+                    <div class="button-wrapper">
+                         <a href="https://github.com/AdrianAguilar2024/website-daily-tech-term-bot" target="_blank" class="btn btn-project">View Bot Code on GitHub</a>
+                    </div>
+                </div>
+
                 <div class="project-card">
                     <h3>JS Lawncare - Live Client Website</h3>
                     <p>Designed and developed a responsive, professional website for a local lawn care business. This project involved direct client communication to meet their business needs. Technologies used include HTML, CSS, and JavaScript for a clean, user-friendly interface. Handled the entire process from development to deployment.</p>
