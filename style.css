@@ -413,4 +413,10 @@ section h2 {
     font-size: 1.1rem;
     line-height: 1.7;
 }
+.term-date {
+    font-style: italic;
+    color: var(--text-muted-light);
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
 }
