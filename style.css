@@ -5,7 +5,7 @@
 :root {
     --bg-dark: #121212;
     --bg-light: #FFFFFF;
-    --bg-beige: #f2ede6; /* Beige for light sections */
+    --bg-beige: #f2ede6;
     --text-light: #FFFFFF;
     --text-dark: #1C1E21;
     --text-muted-dark: #65676B;
@@ -139,7 +139,6 @@ body {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-color: var(--bg-beige);
 }
 
 #hero::before {
@@ -160,7 +159,7 @@ body {
     z-index: 2;
 }
 
-/* Hero Layout */
+/* New Hero Layout */
 .hero-top {
     display: flex;
     align-items: center;
@@ -223,24 +222,45 @@ body {
     margin-right: auto;
 }
 
-/* --- Section Padding --- */
-section {
-    padding: 80px 0;
-}
-
-/* --- DARK SECTIONS --- */
+/* --- Section-Specific Backgrounds --- */
 #skills,
 #projects,
 #contact {
     background-color: var(--bg-dark);
 }
-#skills h2,
-#projects h2 {
+
+#completed-projects,
+#education {
+    background-color: var(--bg-beige);
+    color: var(--text-dark);
+}
+
+/* Other sections */
+#skills, #projects, #education, #contact, #completed-projects {
+    padding: 80px 0;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+#skills h2, #projects h2, #contact h2 {
     color: var(--text-light);
 }
-#skills .skill-pill {
-    background-color: var(--skill-pill-bg);
+#completed-projects h2, #education h2 {
     color: var(--text-dark);
+}
+
+
+/* --- Completed Projects & GitHub Repositories Sections --- */
+#completed-projects h3,
+#completed-projects p {
+    color: var(--text-dark);
+}
+#completed-projects .project-card {
+    border-bottom-color: #d8d2ca;
 }
 #projects h3,
 #projects p {
@@ -249,79 +269,20 @@ section {
 #projects .project-card {
     border-bottom-color: #444;
 }
-#contact .copyright {
-    color: var(--text-light);
-}
 
-/* --- BEIGE SECTIONS --- */
-#completed-projects,
-#education {
-    background-color: var(--bg-beige);
-    color: var(--text-dark);
-}
-#completed-projects h2,
-#education h2 {
-    color: var(--text-dark);
-}
-#completed-projects h3,
-#completed-projects p {
-    color: var(--text-dark);
-}
-#completed-projects .project-card {
-    border-bottom-color: #d8d2ca;
-}
-#education h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-#education p {
-    color: var(--text-muted-dark);
-}
+/* STYLES FOR TECH TERM OF THE DAY CARD (INSIDE COMPLETED PROJECTS) */
 .tech-term-card {
     background-color: #ffffff;
     border: 1px solid #ddd;
-}
-.tech-term-content h3, .tech-term-content p {
-    color: var(--text-dark);
-}
-.term-date {
-    color: var(--text-muted-dark);
-}
-
-/* --- General Section Styles --- */
-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-}
-.project-card {
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto 50px auto;
-    padding-bottom: 40px;
-    border-bottom: 1px solid; /* color is set by section */
-}
-.project-card:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-.project-status {
-    font-weight: 300;
-    font-style: italic;
-    color: #0A66C2;
-}
-
-/* --- Tech Term of the Day --- */
-.tech-term-card {
     border-radius: 15px;
     overflow: hidden;
-    max-width: 800px;
-    margin: 0 auto;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    max-width: 650px;
+    margin: 20px auto 0 auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 #tech-term-image {
     width: 100%;
-    height: 250px; /* THIS IS THE FIX: The new, smaller height */
+    height: 250px; /* THIS IS THE CORRECT, SMALLER HEIGHT */
     object-fit: cover;
     display: block;
 }
@@ -329,8 +290,8 @@ section h2 {
     padding: 30px;
 }
 .tech-term-content h3 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 .tech-term-content p {
     font-size: 1.1rem;
@@ -338,9 +299,11 @@ section h2 {
 }
 .term-date {
     font-style: italic;
+    color: var(--text-muted-dark);
     margin-bottom: 15px;
     font-size: 1rem;
 }
+
 
 /* --- Mobile Nav, Gallery, Other --- */
 .mobile-nav-toggle { display: none; background: transparent; border: none; cursor: pointer; z-index: 9999; }
@@ -357,9 +320,16 @@ section h2 {
 .project-images { display: flex; justify-content: center; gap: 15px; margin-top: 25px; margin-bottom: 10px; }
 .project-images img { max-width: 32%; height: auto; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
 .skills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+.skill-pill { background-color: var(--skill-pill-bg); color: var(--text-dark); padding: 12px 25px; border-radius: 50px; font-weight: 400; }
+.project-card { text-align: center; max-width: 650px; margin: 0 auto 50px auto; padding-bottom: 40px; border-bottom: 1px solid; }
+.project-card:last-child { border-bottom: none; padding-bottom: 0; }
+.project-status { font-weight: 300; font-style: italic; color: #0A66C2; }
 .education-item { margin-bottom: 30px; text-align: center; }
+#education h3 { font-size: 1.5rem; font-weight: 600; }
+#education p { color: var(--text-muted-dark); }
 .footer-content { text-align: center; }
 .footer-content .btn { margin-bottom: 40px; }
+.copyright { color: var(--text-light); }
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
