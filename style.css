@@ -133,13 +133,13 @@ body {
     justify-content: center;
     padding: 80px 0;
     position: relative;
-    color: var(--text-light); /* Text is light on the photo */
+    color: var(--text-light);
 
     background-image: url('images/backGroundPhoto.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-color: var(--bg-beige); /* Fallback color behind image */
+    background-color: var(--bg-beige);
 }
 
 #hero::before {
@@ -311,6 +311,37 @@ section h2 {
     color: #0A66C2;
 }
 
+/* --- Tech Term of the Day --- */
+.tech-term-card {
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+#tech-term-image {
+    width: 100%;
+    height: 250px; /* THIS IS THE FIX: The new, smaller height */
+    object-fit: cover;
+    display: block;
+}
+.tech-term-content {
+    padding: 30px;
+}
+.tech-term-content h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+.tech-term-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+.term-date {
+    font-style: italic;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
 /* --- Mobile Nav, Gallery, Other --- */
 .mobile-nav-toggle { display: none; background: transparent; border: none; cursor: pointer; z-index: 9999; }
 .hamburger-line { display: block; width: 25px; height: 3px; background-color: var(--text-dark); margin: 5px 0; transition: transform 0.3s ease, opacity 0.3s ease; }
@@ -326,7 +357,6 @@ section h2 {
 .project-images { display: flex; justify-content: center; gap: 15px; margin-top: 25px; margin-bottom: 10px; }
 .project-images img { max-width: 32%; height: auto; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
 .skills-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-.skill-pill { background-color: var(--skill-pill-bg); color: var(--text-dark); padding: 12px 25px; border-radius: 50px; font-weight: 400; }
 .education-item { margin-bottom: 30px; text-align: center; }
 .footer-content { text-align: center; }
 .footer-content .btn { margin-bottom: 40px; }
