@@ -346,6 +346,35 @@ section h2 {
 .footer-content .btn { margin-bottom: 40px; }
 .copyright { color: var(--text-light); }
 
+/* --- Styles for Footer Buttons --- */
+
+.footer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Creates space between the buttons */
+    margin-bottom: 40px; /* Keeps the space between buttons and copyright text */
+}
+
+/* Style for the new GitHub button */
+.btn-github {
+    background-color: #333; /* Dark GitHub color */
+    color: var(--text-light);
+    border: 1px solid var(--text-light);
+}
+
+.btn-github:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* 
+  This overrides the old rule that was pushing 
+  the buttons apart from each other vertically.
+*/
+.footer-content .btn {
+    margin-bottom: 0;
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
     .nav-links, .desktop-only { display: none; }
