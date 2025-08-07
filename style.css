@@ -356,7 +356,38 @@ section h2 {
 .footer-content .btn {
     margin-bottom: 0;
 }
+/* --- Styles for Font Awesome Icon Buttons --- */
 
+/* Base style for all icon buttons */
+.fa {
+  padding: 15px; /* Adjust padding to control the size */
+  font-size: 20px; /* Controls the icon size */
+  width: 50px; /* Defines a fixed width */
+  height: 50px; /* Defines a fixed height */
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%; /* This makes the buttons round */
+  display: inline-block; /* Ensures proper layout */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for all icons */
+.fa:hover {
+  opacity: 0.9;
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Specific style for the LinkedIn icon */
+.fa-linkedin {
+  background: #0077B5; /* Official LinkedIn blue */
+  color: white;
+}
+
+/* Specific style for the GitHub icon */
+.fa-github {
+  background: #333; /* Dark GitHub color */
+  color: white;
+}
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
     .nav-links, .desktop-only { display: none; }
