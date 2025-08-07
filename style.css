@@ -124,21 +124,6 @@ body {
     text-align: center;
     margin-top: 30px;
 }
-<footer id="contact">
-  <div class="container footer-content">
-    <div class="footer-buttons">
-      <a class="btn btn-linkedin" href="https://www.linkedin.com/in/leo-a-aguilar/" target="_blank">
-        LinkedIn
-      </a>
-      <a class="btn btn-github" href="https://github.com/AdrianAguilar2024" target="_blank">
-        GitHub
-      </a>
-    </div>
-    <p class="copyright">
-      Adrian Aguilar © 2025 | Loveland, Colorado
-    </p>
-  </div>
-</footer>
 
 /* --- Hero Section (About Me) --- */
 #hero {
@@ -297,7 +282,7 @@ section h2 {
 }
 #tech-term-image {
     width: 100%;
-    height: 250px; /* THIS IS THE CORRECT, SMALLER HEIGHT */
+    height: 250px;
     object-fit: cover;
     display: block;
 }
@@ -343,11 +328,9 @@ section h2 {
 #education h3 { font-size: 1.5rem; font-weight: 600; }
 #education p { color: var(--text-muted-dark); }
 .footer-content { text-align: center; }
-.footer-content .btn { margin-bottom: 40px; }
 .copyright { color: var(--text-light); }
 
 /* --- Styles for Footer Buttons --- */
-
 .footer-buttons {
     display: flex;
     justify-content: center;
@@ -355,7 +338,6 @@ section h2 {
     margin-bottom: 40px; /* Keeps the space between buttons and copyright text */
 }
 
-/* Style for the new GitHub button */
 .btn-github {
     background-color: #333; /* Dark GitHub color */
     color: var(--text-light);
